@@ -116,14 +116,9 @@ SOURCE=.\XMesh.cpp
 SOURCE=.\XMesh.h
 # End Source File
 # End Group
-# Begin Source File
+# Begin Group "Header Files"
 
-SOURCE=.\globalDefines.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\ColorValue.cpp
-# End Source File
+# PROP Default_Filter ""
 # Begin Source File
 
 SOURCE=.\ColorValue.h
@@ -134,15 +129,11 @@ SOURCE=.\CustomVertex.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Device.cpp
-# End Source File
-# Begin Source File
-
 SOURCE=.\Device.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Effect.cpp
+SOURCE=.\dxLib.h
 # End Source File
 # Begin Source File
 
@@ -150,15 +141,11 @@ SOURCE=.\Effect.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\ExtendedMaterial.cpp
-# End Source File
-# Begin Source File
-
 SOURCE=.\ExtendedMaterial.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\IndexBuffer.cpp
+SOURCE=.\globalDefines.h
 # End Source File
 # Begin Source File
 
@@ -166,15 +153,7 @@ SOURCE=.\IndexBuffer.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Light.cpp
-# End Source File
-# Begin Source File
-
 SOURCE=.\Light.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\Material.cpp
 # End Source File
 # Begin Source File
 
@@ -182,15 +161,7 @@ SOURCE=.\Material.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Matrix.cpp
-# End Source File
-# Begin Source File
-
 SOURCE=.\Matrix.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\Mesh.cpp
 # End Source File
 # Begin Source File
 
@@ -198,15 +169,7 @@ SOURCE=.\Mesh.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Path.cpp
-# End Source File
-# Begin Source File
-
 SOURCE=.\Path.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\RenderState.cpp
 # End Source File
 # Begin Source File
 
@@ -214,15 +177,7 @@ SOURCE=.\RenderState.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Texture.cpp
-# End Source File
-# Begin Source File
-
 SOURCE=.\Texture.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\TextureLoader.cpp
 # End Source File
 # Begin Source File
 
@@ -230,15 +185,7 @@ SOURCE=.\TextureLoader.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Transform.cpp
-# End Source File
-# Begin Source File
-
 SOURCE=.\Transform.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\Vector3.cpp
 # End Source File
 # Begin Source File
 
@@ -246,11 +193,76 @@ SOURCE=.\Vector3.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\VertexBuffer.cpp
+SOURCE=.\VertexBuffer.h
+# End Source File
+# End Group
+# Begin Group "Source Files"
+
+# PROP Default_Filter ""
+# Begin Source File
+
+SOURCE=.\ColorValue.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\VertexBuffer.h
+SOURCE=.\Device.cpp
 # End Source File
+# Begin Source File
+
+SOURCE=.\Effect.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\ExtendedMaterial.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\IndexBuffer.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Light.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Material.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Matrix.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Mesh.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Path.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\RenderState.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Texture.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\TextureLoader.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Transform.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Vector3.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\VertexBuffer.cpp
+# End Source File
+# End Group
 # End Target
 # End Project

@@ -11,8 +11,24 @@ Package=<5>
 
 Package=<4>
 {{{
-	Begin Project Dependency
+    Begin Project Dependency
     Project_Dep_Name dxLib
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "TGCViewer"=".\TGCViewer\TGCViewer.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name dxLib
+	Project_Dep_Name tgcLib
     End Project Dependency
 }}}
 
@@ -26,6 +42,21 @@ Package=<5>
 
 Package=<4>
 {{{
+}}}
+
+###############################################################################
+
+Project: "tgcLib"=".\tgcLib\tgcLib.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name dxLib
+    End Project Dependency
 }}}
 
 ###############################################################################

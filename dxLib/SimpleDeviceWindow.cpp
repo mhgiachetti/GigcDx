@@ -73,6 +73,10 @@ void SimpleDeviceWindow::Play()
 
 void SimpleDeviceWindow::CreateNativeWindow()
 {
+	m_aspect_ratio = (float)m_present_parameters.BackBufferWidth/(float)m_present_parameters.BackBufferHeight;
+	if(m_hInstance == NULL)
+		//el hwnd se setea a mano
+		return;
 	RegisterClassEx(&m_wndclassex);
 
 	m_hWnd = CreateWindowEx(NULL,
@@ -89,7 +93,7 @@ void SimpleDeviceWindow::CreateNativeWindow()
 		NULL);
 
 	ShowWindow(m_hWnd, SW_SHOWDEFAULT );
-	m_aspect_ratio = (float)m_present_parameters.BackBufferWidth/(float)m_present_parameters.BackBufferHeight;
+	
 }
 
 void SimpleDeviceWindow::CreateInterface()
