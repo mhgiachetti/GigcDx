@@ -5,12 +5,6 @@
 #include "stdafx.h"
 #include "PruebaVentana.h"
 #include <stdio.h>
-#include "..\dxLib\Matrix.h"
-#include "..\dxLib\Light.h"
-#include "..\dxLib\Mesh.h"
-#include "..\dxLib\Effect.h"
-#include "..\dxLib\XMesh.h"
-#include "..\dxLib\MeshLoader.h"
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction

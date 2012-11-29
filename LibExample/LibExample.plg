@@ -3,16 +3,100 @@
 <pre>
 <h1>Build Log</h1>
 <h3>
+--------------------Configuration: dxLib - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\Users\Negro\AppData\Local\Temp\RSPE99C.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /FR"Debug/" /Fp"Debug/dxLib.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\dxLib\HighTimer.cpp"
+"C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\dxLib\MeshLoader.cpp"
+"C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\dxLib\SimpleDeviceWindow.cpp"
+"C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\dxLib\XMesh.cpp"
+"C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\dxLib\ColorValue.cpp"
+"C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\dxLib\Device.cpp"
+"C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\dxLib\Effect.cpp"
+"C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\dxLib\ExtendedMaterial.cpp"
+"C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\dxLib\IndexBuffer.cpp"
+"C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\dxLib\Light.cpp"
+"C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\dxLib\Material.cpp"
+"C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\dxLib\Matrix.cpp"
+"C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\dxLib\Mesh.cpp"
+"C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\dxLib\Path.cpp"
+"C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\dxLib\RenderState.cpp"
+"C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\dxLib\Texture.cpp"
+"C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\dxLib\TextureLoader.cpp"
+"C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\dxLib\Transform.cpp"
+"C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\dxLib\Vector3.cpp"
+"C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\dxLib\VertexBuffer.cpp"
+]
+Creating command line "cl.exe @C:\Users\Negro\AppData\Local\Temp\RSPE99C.tmp" 
+Creating temporary file "C:\Users\Negro\AppData\Local\Temp\RSPE99D.tmp" with contents
+[
+/nologo /out:"Debug\dxLib.lib" 
+".\Debug\HighTimer.obj"
+".\Debug\MeshLoader.obj"
+".\Debug\SimpleDeviceWindow.obj"
+".\Debug\XMesh.obj"
+".\Debug\ColorValue.obj"
+".\Debug\Device.obj"
+".\Debug\Effect.obj"
+".\Debug\ExtendedMaterial.obj"
+".\Debug\IndexBuffer.obj"
+".\Debug\Light.obj"
+".\Debug\Material.obj"
+".\Debug\Matrix.obj"
+".\Debug\Mesh.obj"
+".\Debug\Path.obj"
+".\Debug\RenderState.obj"
+".\Debug\Texture.obj"
+".\Debug\TextureLoader.obj"
+".\Debug\Transform.obj"
+".\Debug\Vector3.obj"
+".\Debug\VertexBuffer.obj"
+]
+Creating command line "link.exe -lib @C:\Users\Negro\AppData\Local\Temp\RSPE99D.tmp"
+<h3>Output Window</h3>
+Compiling...
+HighTimer.cpp
+MeshLoader.cpp
+SimpleDeviceWindow.cpp
+XMesh.cpp
+ColorValue.cpp
+Device.cpp
+Effect.cpp
+ExtendedMaterial.cpp
+IndexBuffer.cpp
+Light.cpp
+Material.cpp
+Matrix.cpp
+Mesh.cpp
+Path.cpp
+RenderState.cpp
+Texture.cpp
+TextureLoader.cpp
+Transform.cpp
+Vector3.cpp
+VertexBuffer.cpp
+Creating library...
+<h3>
 --------------------Configuration: LibExample - Win32 Debug--------------------
 </h3>
 <h3>Command Lines</h3>
-Creating temporary file "C:\Users\Negro\AppData\Local\Temp\RSPAD4F.tmp" with contents
+Creating temporary file "C:\Users\Negro\AppData\Local\Temp\RSP873.tmp" with contents
 [
 /nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /Fp"Debug/LibExample.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\LibExample\LibExample.cpp"
 "C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\LibExample\PruebaVentana.cpp"
 ]
-Creating command line "cl.exe @C:\Users\Negro\AppData\Local\Temp\RSPAD4F.tmp" 
-Creating temporary file "C:\Users\Negro\AppData\Local\Temp\RSPAD50.tmp" with contents
+Creating command line "cl.exe @C:\Users\Negro\AppData\Local\Temp\RSP873.tmp" 
+Creating temporary file "C:\Users\Negro\AppData\Local\Temp\RSP874.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /Fp"Debug/LibExample.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\LibExample\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\Users\Negro\AppData\Local\Temp\RSP874.tmp" 
+Creating temporary file "C:\Users\Negro\AppData\Local\Temp\RSP875.tmp" with contents
 [
 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /incremental:yes /pdb:"Debug/LibExample.pdb" /debug /machine:I386 /out:"Debug/LibExample.exe" /pdbtype:sept 
 ".\Debug\LibExample.obj"
@@ -20,10 +104,14 @@ kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32
 ".\Debug\StdAfx.obj"
 "\Users\Negro\Desktop\Negro\Programacion\C++\Directx\dxLib\Debug\dxLib.lib"
 ]
-Creating command line "link.exe @C:\Users\Negro\AppData\Local\Temp\RSPAD50.tmp"
+Creating command line "link.exe @C:\Users\Negro\AppData\Local\Temp\RSP875.tmp"
 <h3>Output Window</h3>
 Compiling...
+StdAfx.cpp
+Compiling...
+LibExample.cpp
 PruebaVentana.cpp
+Generating Code...
 Linking...
 
 

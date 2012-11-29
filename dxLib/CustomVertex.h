@@ -2,8 +2,8 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_MGCUSTOMVERTEX_H__8FF90842_7E72_4E4B_A6F7_68D4C2CCB753__INCLUDED_)
-#define AFX_MGCUSTOMVERTEX_H__8FF90842_7E72_4E4B_A6F7_68D4C2CCB753__INCLUDED_
+#if !defined(AFX_CUSTOMVERTEX_H__8FF90842_7E72_4E4B_A6F7_68D4C2CCB753__INCLUDED_)
+#define AFX_CUSTOMVERTEX_H__8FF90842_7E72_4E4B_A6F7_68D4C2CCB753__INCLUDED_
 
 #if _MSC_VER > 1000
 #pragma once
@@ -20,7 +20,7 @@ namespace CustomVertex
 		int color;
 		public:
 			static int Size() {return sizeof(PositionColored);};
-			static VertexFormat Format() {return MGVertexFormat_Position | MGVertexFormat_Diffuse;};
+			static VertexFormat Format() {return VertexFormat_Position | VertexFormat_Diffuse;};
 
 	}PositionColored;
 
@@ -35,7 +35,7 @@ namespace CustomVertex
 
 		public:
 			static int Size() {return sizeof(PositionNormal);};
-			static VertexFormat Format() {return MGVertexFormat_PositionNormal;};
+			static VertexFormat Format() {return VertexFormat_PositionNormal;};
 	}PositionNormal;
 
 
@@ -51,7 +51,7 @@ namespace CustomVertex
 		
 		public:
 			static int Size() {return sizeof(PositionNormalColored);};
-			static VertexFormat Format() {return MGVertexFormat_PositionNormal | MGVertexFormat_Diffuse;};
+			static VertexFormat Format() {return VertexFormat_PositionNormal | VertexFormat_Diffuse;};
 	}PositionNormalColored;
 
 	typedef struct  
@@ -64,7 +64,7 @@ namespace CustomVertex
 		
 		public:
 			static int Size() {return sizeof(PositionTextured);};
-			static VertexFormat Format() {return MGVertexFormat_Position | MGVertexFormat_Texture1;};
+			static VertexFormat Format() {return VertexFormat_Position | VertexFormat_Texture1;};
 	}PositionTextured;
 
 	typedef struct  
@@ -80,7 +80,7 @@ namespace CustomVertex
 		
 		public:
 			static int Size() {return sizeof(PositionNormalTextured);};
-			static VertexFormat Format() {return MGVertexFormat_PositionNormal | MGVertexFormat_Texture1;};
+			static VertexFormat Format() {return VertexFormat_PositionNormal | VertexFormat_Texture1;};
 	}PositionNormalTextured;
 
 
@@ -93,11 +93,11 @@ namespace CustomVertex
 		int color;
 		public:
 			static int Size() {return sizeof(TransformedColored);};
-			static VertexFormat Format() {return MGVertexFormat_Transformed | MGVertexFormat_Diffuse;};
+			static VertexFormat Format() {return VertexFormat_Transformed | VertexFormat_Diffuse;};
 			
 	}TransformedColored;
 
 	
 }
 
-#endif // !defined(AFX_MGCUSTOMVERTEX_H__8FF90842_7E72_4E4B_A6F7_68D4C2CCB753__INCLUDED_)
+#endif // !defined(AFX_CUSTOMVERTEX_H__8FF90842_7E72_4E4B_A6F7_68D4C2CCB753__INCLUDED_)

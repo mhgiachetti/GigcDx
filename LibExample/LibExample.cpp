@@ -2,9 +2,6 @@
 //
 
 #include "stdafx.h"
-#include <d3d9.h>
-#include "..\dxLib\globalDefines.h"
-#include "..\dxLib\SimpleDeviceWindow.h"
 #include "PruebaVentana.h"
 
 
