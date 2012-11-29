@@ -9,6 +9,7 @@
 #pragma once
 #endif // _MSC_VER > 1000
 #include "globalDefines.h"
+#include "Vector3.h"
 
 namespace CustomVertex  
 {
@@ -54,7 +55,7 @@ namespace CustomVertex
 			static VertexFormat Format() {return VertexFormat_PositionNormal | VertexFormat_Diffuse;};
 	}PositionNormalColored;
 
-	typedef struct  
+	typedef struct _PositionTextured
 	{
 		float x;
 		float y;
@@ -65,6 +66,8 @@ namespace CustomVertex
 		public:
 			static int Size() {return sizeof(PositionTextured);};
 			static VertexFormat Format() {return VertexFormat_Position | VertexFormat_Texture1;};
+			_PositionTextured(){};
+			_PositionTextured(Vector3 pos, float u, float v){x=pos.X;y=pos.Y;z=pos.Z;this->u=u;this->v=v;};
 	}PositionTextured;
 
 	typedef struct  

@@ -40,9 +40,10 @@ public:
     virtual void * Lock(UINT OffsetToLock,UINT SizeToLock,LockFlags Flags);
     virtual void Unlock();
     virtual VertexBufferDescription GetDesc();
-	virtual void Release();
+	virtual void Dispose();
 	virtual void Create(LPD3DDEVICE device, UINT Length, Usage Usage, VertexFormat vertexFormat,Pool Pool);
 	virtual void SetData(void * pData,int dataSize, LockFlags Flags);
+	virtual bool Disposed();
 
 	operator LPD3DVERTEXBUFFER(void);
 	operator LPD3DVERTEXBUFFER*(void);

@@ -69,9 +69,13 @@ void Texture::UnlockRectangle(int numLevel)
 	m_texture->UnlockRect(numLevel);
 }
 
-void Texture::Release()
+void Texture::Dispose()
 {
-	m_texture->Release();
+	if(m_texture)
+	{
+		m_texture->Release();
+		m_texture = NULL;
+	}
 }
 
 void Texture::Create( LPD3DDEVICE device, int width, int height, int numLevels, Usage usage, Format format, Pool pool )
@@ -97,6 +101,11 @@ Texture::operator LPD3DTEXTURE*() const
 Texture::operator LPD3DTEXTURE*()
 {
 	return (LPD3DTEXTURE*)&m_texture;
+}
+
+bool Texture::Disposed()
+{
+	return m_texture == NULL;
 }
 
 

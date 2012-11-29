@@ -28,7 +28,8 @@ public:
     virtual ResourceType GetType();
     virtual void * LockRectangle(int numLevel,LockFlags Flags, int &outPitch);
     virtual void UnlockRectangle(int numLevel);
-	virtual void Release();
+	virtual void Dispose();
+	virtual bool Disposed();
 	virtual void Create(LPD3DDEVICE device, int width, int height, int numLevels, Usage usage, Format format, Pool pool);
 	
 	void SetTexture(LPD3DTEXTURE texture);

@@ -136,23 +136,23 @@ void Matrix::RotationAxis( Vector3 vector, float angle )
 	float cos_a = (float)cos( angle ); 
 	float t = 1 - cos_a;
 	
-	float x_y = vector.x * vector.y; 
-	float x_z = vector.x * vector.z; 
-	float y_z = vector.y * vector.z; 
+	float x_y = vector.X * vector.Y; 
+	float x_z = vector.X * vector.Z; 
+	float y_z = vector.Y * vector.Z; 
 	
-	m[0][0] = 1 + t * ( vector.x * vector.x - 1 ); 
-	m[0][1] = -vector.z * sin_a + t * x_y;     
-	m[0][2] =  vector.y * sin_a + t * x_z; 
+	m[0][0] = 1 + t * ( vector.X * vector.X - 1 ); 
+	m[0][1] = -vector.Z * sin_a + t * x_y;     
+	m[0][2] =  vector.Y * sin_a + t * x_z; 
 	m[0][3] = 0; 
     
-	m[1][0] = vector.z * sin_a + t * x_y; 
-	m[1][1] = 1 + t * ( vector.y * vector.y - 1 ); 
-	m[1][2] = -vector.x * sin_a + t * y_z; 
+	m[1][0] = vector.Z * sin_a + t * x_y; 
+	m[1][1] = 1 + t * ( vector.Y * vector.Y - 1 ); 
+	m[1][2] = -vector.X * sin_a + t * y_z; 
 	m[1][3] = 0; 
 	
-	m[2][0] = -vector.y * sin_a + t * x_z; 
-	m[2][1] =  vector.x * sin_a + t * y_z; 
-	m[2][2] = 1 + t * ( vector.z * vector.z -1 ); 
+	m[2][0] = -vector.Y * sin_a + t * x_z; 
+	m[2][1] =  vector.X * sin_a + t * y_z; 
+	m[2][2] = 1 + t * ( vector.Z * vector.Z -1 ); 
 	m[2][3] = 0; 
     
 	m[3][0] = 0;          
@@ -312,9 +312,9 @@ void Matrix::LookAtLH( const Vector3 &cameraPosition, const Vector3 &cameraTarge
 	Vector3 xaxis = Vector3::Normalize(cameraUpVector.Cross(zaxis));
 	Vector3 yaxis = Vector3::Normalize(zaxis.Cross(xaxis));
 
-	m[0][0] = xaxis.x; m[0][1] = yaxis.x; m[0][2] = zaxis.x; m[0][3] = 0;
-	m[1][0] = xaxis.y; m[1][1] = yaxis.y; m[1][2] = zaxis.y, m[1][3] = 0;
-	m[2][0] = xaxis.z; m[2][1] = yaxis.z; m[2][2] = zaxis.z, m[2][3] = 0;
+	m[0][0] = xaxis.X; m[0][1] = yaxis.X; m[0][2] = zaxis.X; m[0][3] = 0;
+	m[1][0] = xaxis.Y; m[1][1] = yaxis.Y; m[1][2] = zaxis.Y, m[1][3] = 0;
+	m[2][0] = xaxis.Z; m[2][1] = yaxis.Z; m[2][2] = zaxis.Z, m[2][3] = 0;
 	m[3][0] = -xaxis.Dot(cameraPosition); m[3][1] = -yaxis.Dot(cameraPosition); m[3][2] = -zaxis.Dot(cameraPosition); m[3][3] = 1;
 }
 

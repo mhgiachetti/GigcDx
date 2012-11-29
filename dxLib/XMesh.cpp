@@ -82,9 +82,9 @@ Matrix XMesh::GetTransform()
 	if(m_transform_dirty)
 	{
 		//recalculo la matriz de transformacion
-		m_transform =	Matrix::SScale(m_scale.x,m_scale.y,m_scale.z)*
-						Matrix::SRotationYawPitchRoll(m_rotation.z,m_rotation.x,m_rotation.y)*
-						Matrix::STranslation(m_position.x,m_position.y,m_position.z);
+		m_transform =	Matrix::SScale(m_scale.X,m_scale.Y,m_scale.Z)*
+						Matrix::SRotationYawPitchRoll(m_rotation.Z,m_rotation.X,m_rotation.Y)*
+						Matrix::STranslation(m_position.X,m_position.Y,m_position.Z);
 
 		
 		m_transform_dirty = false;
@@ -149,11 +149,11 @@ void XMesh::Render()
 	
 }
 
-void XMesh::Release()
+void XMesh::Dispose()
 {
 	for (int i = 0; i < m_textures.size() ; i++)
 	{
-		m_textures[i].Release();
+		m_textures[i].Dispose();
 	}
-	m_mesh.Release();
+	m_mesh.Dispose();
 }

@@ -19,7 +19,7 @@ public:
 	{
 		struct
 		{
-			float x,y,z;
+			float X,Y,Z;
 		};
 		float v[3];
 	};

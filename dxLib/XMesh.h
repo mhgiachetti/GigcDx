@@ -51,7 +51,7 @@ public:
 
 	
 	void Render();
-	void Release();
+	void Dispose();
 
 };
 

@@ -91,7 +91,7 @@ IndexBuffer Mesh::GetIndexBuffer()
 	return ib;
 }
 
-void Mesh::Release()
+void Mesh::Dispose()
 {
 	m_mesh->Release();
 }

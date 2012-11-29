@@ -11,7 +11,7 @@
 
 VertexBuffer::VertexBuffer()
 {
-	
+	m_vBuffer = NULL;
 }
 
 VertexBuffer::VertexBuffer(LPD3DVERTEXBUFFER vertexBuffer)
@@ -93,9 +93,13 @@ VertexBufferDescription VertexBuffer::GetDesc()
 	return desc;
 }
 
-void VertexBuffer::Release()
+void VertexBuffer::Dispose()
 {
-	m_vBuffer->Release();
+	if(m_vBuffer)
+	{
+		m_vBuffer->Release();
+		m_vBuffer = NULL;
+	}
 }
 
 VertexBuffer::operator LPD3DVERTEXBUFFER( void )
@@ -120,4 +124,9 @@ void VertexBuffer::SetData( void * pData,int dataSize, LockFlags Flags )
 	memcpy(vbdata, pData, dataSize);
 
 	Unlock();
+}
+
+bool VertexBuffer::Disposed()
+{
+	return m_vBuffer == NULL;
 }

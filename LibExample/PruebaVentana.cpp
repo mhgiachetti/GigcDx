@@ -93,7 +93,7 @@ void PruebaVentana::Render( double elapsed )
 
 void PruebaVentana::Dispose()
 {
-	mesh.Release();
+	mesh.Dispose();
 	SimpleDeviceWindow::Dispose();
 }
 

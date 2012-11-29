@@ -39,7 +39,7 @@ public:
     virtual void * Lock(UINT OffsetToLock,UINT SizeToLock,LockFlags Flags);
     virtual void Unlock();
     //virtual VertexBufferDescription GetDesc();
-	virtual void Release();
+	virtual void Dispose();
 	virtual void Create(LPD3DDEVICE device, UINT sizeOfBufferInBytes, Usage Usage, Pool Pool, bool sixteenBitIndices);
 	virtual void SetData(void * pData,int dataSize, LockFlags Flags);
 	

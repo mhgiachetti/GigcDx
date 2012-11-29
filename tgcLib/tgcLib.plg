@@ -6,14 +6,62 @@
 --------------------Configuration: tgcLib - Win32 Debug--------------------
 </h3>
 <h3>Command Lines</h3>
-Creating command line "link.exe -lib /nologo /out:"Debug\tgcLib.lib"  "\Users\Negro\Desktop\Negro\Programacion\C++\Directx\dxLib\Debug\dxLib.lib" "
+Creating temporary file "C:\Users\Negro\AppData\Local\Temp\RSP6C8F.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /Fp"Debug/tgcLib.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\tgcLib\TGCSimpleTerrain.cpp"
+]
+Creating command line "cl.exe @C:\Users\Negro\AppData\Local\Temp\RSP6C8F.tmp" 
+Creating command line "link.exe -lib /nologo /out:"Debug\tgcLib.lib"  ".\Debug\TGCSimpleTerrain.obj" ".\Debug\GuiController.obj" ".\Debug\IntMatrix.obj" "\Users\Negro\Desktop\Negro\Programacion\C++\Directx\dxLib\Debug\dxLib.lib" "
 <h3>Output Window</h3>
-Creating library...
+Compiling...
+TGCSimpleTerrain.cpp
+C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\tgcLib\TGCSimpleTerrain.cpp(160) : error C2065: 'Bitmap' : undeclared identifier
+C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\tgcLib\TGCSimpleTerrain.cpp(160) : error C2146: syntax error : missing ';' before identifier 'bitmap'
+C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\tgcLib\TGCSimpleTerrain.cpp(160) : error C2065: 'bitmap' : undeclared identifier
+C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\tgcLib\TGCSimpleTerrain.cpp(160) : error C2146: syntax error : missing ';' before identifier 'Bitmap'
+C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\tgcLib\TGCSimpleTerrain.cpp(160) : error C2228: left of '.FromFile' must have class/struct/union type
+C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\tgcLib\TGCSimpleTerrain.cpp(161) : error C2228: left of '.Size' must have class/struct/union type
+C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\tgcLib\TGCSimpleTerrain.cpp(161) : error C2228: left of '.Width' must have class/struct/union type
+C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\tgcLib\TGCSimpleTerrain.cpp(162) : error C2228: left of '.Size' must have class/struct/union type
+C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\tgcLib\TGCSimpleTerrain.cpp(162) : error C2228: left of '.Height' must have class/struct/union type
+C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\tgcLib\TGCSimpleTerrain.cpp(163) : warning C4091: '' : ignored on left of 'int' when no variable is declared
+C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\tgcLib\TGCSimpleTerrain.cpp(163) : error C2143: syntax error : missing ';' before '['
+C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\tgcLib\TGCSimpleTerrain.cpp(163) : error C2143: syntax error : missing ';' before '['
+C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\tgcLib\TGCSimpleTerrain.cpp(169) : error C2065: 'Color' : undeclared identifier
+C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\tgcLib\TGCSimpleTerrain.cpp(169) : error C2146: syntax error : missing ';' before identifier 'pixel'
+C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\tgcLib\TGCSimpleTerrain.cpp(169) : error C2065: 'pixel' : undeclared identifier
+C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\tgcLib\TGCSimpleTerrain.cpp(169) : error C2228: left of '.GetPixel' must have class/struct/union type
+C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\tgcLib\TGCSimpleTerrain.cpp(170) : error C2228: left of '.R' must have class/struct/union type
+C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\tgcLib\TGCSimpleTerrain.cpp(170) : error C2228: left of '.G' must have class/struct/union type
+C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\tgcLib\TGCSimpleTerrain.cpp(170) : error C2228: left of '.B' must have class/struct/union type
+C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\tgcLib\TGCSimpleTerrain.cpp(171) : error C2065: 'heightmap' : undeclared identifier
+C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\tgcLib\TGCSimpleTerrain.cpp(171) : error C2109: subscript requires array or pointer type
+C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\tgcLib\TGCSimpleTerrain.cpp(171) : error C2106: '=' : left operand must be l-value
+C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\tgcLib\TGCSimpleTerrain.cpp(176) : error C2228: left of '.Dispose' must have class/struct/union type
+C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\tgcLib\TGCSimpleTerrain.cpp(189) : error C2440: 'initializing' : cannot convert from '' to 'class Device'
+        No constructor could take the source type, or constructor overload resolution was ambiguous
+C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\tgcLib\TGCSimpleTerrain.cpp(190) : error C2275: 'Matrix' : illegal use of this type as an expression
+        c:\users\negro\desktop\negro\programacion\c++\directx\dxlib\matrix.h(15) : see declaration of 'Matrix'
+C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\tgcLib\TGCSimpleTerrain.cpp(194) : error C2065: 'null' : undeclared identifier
+C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\tgcLib\TGCSimpleTerrain.cpp(195) : error C2039: 'Material' : is not a member of 'Device'
+        c:\users\negro\desktop\negro\programacion\c++\directx\dxlib\device.h(19) : see declaration of 'Device'
+C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\tgcLib\TGCSimpleTerrain.cpp(195) : error C2065: 'TgcD3dDevice' : undeclared identifier
+C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\tgcLib\TGCSimpleTerrain.cpp(195) : error C2228: left of '.DEFAULT_MATERIAL' must have class/struct/union type
+C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\tgcLib\TGCSimpleTerrain.cpp(197) : error C2039: 'VertexFormat' : is not a member of 'Device'
+        c:\users\negro\desktop\negro\programacion\c++\directx\dxlib\device.h(19) : see declaration of 'Device'
+C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\tgcLib\TGCSimpleTerrain.cpp(197) : error C2882: 'CustomVertex' : illegal use of namespace identifier in expression
+C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\tgcLib\TGCSimpleTerrain.cpp(197) : error C2228: left of '.PositionTextured' must have class/struct/union type
+C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\tgcLib\TGCSimpleTerrain.cpp(197) : error C2228: left of '.Format' must have class/struct/union type
+C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\tgcLib\TGCSimpleTerrain.cpp(198) : error C2039: 'SetStreamSource' : is not a member of 'Device'
+        c:\users\negro\desktop\negro\programacion\c++\directx\dxlib\device.h(19) : see declaration of 'Device'
+C:\Users\Negro\Desktop\Negro\Programacion\C++\Directx\tgcLib\TGCSimpleTerrain.cpp(199) : error C2228: left of '.TriangleList' must have class/struct/union type
+Error executing cl.exe.
 
 
 
 <h3>Results</h3>
-tgcLib.lib - 0 error(s), 0 warning(s)
+tgcLib.lib - 34 error(s), 1 warning(s)
 </pre>
 </body>
 </html>

@@ -24,6 +24,7 @@
 #include "TextureLoader.h"
 #include "Transform.h"
 #include "Vector3.h"
+#include "Vector2.h"
 #include "VertexBuffer.h"
 
 

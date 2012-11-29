@@ -75,7 +75,7 @@ ResourceType IndexBuffer::GetType()
 	return m_iBuffer->GetType();
 }
 
-void IndexBuffer::Release()
+void IndexBuffer::Dispose()
 {
 	m_iBuffer->Release();
 }

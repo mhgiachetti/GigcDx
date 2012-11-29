@@ -30,7 +30,7 @@ public:
 	void DrawSubset(int subset);
 	VertexBuffer GetVertexBuffer();
 	IndexBuffer GetIndexBuffer();
-	void Release();
+	void Dispose();
 	Device GetDevice();
 
 	static Mesh FromFile(const char * filename, MeshFlags flags, LPD3DDEVICE device);

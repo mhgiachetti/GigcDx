@@ -42,18 +42,18 @@ Vector3::operator const float*() const
 
 Vector3& Vector3::operator+=( const Vector3& v2)
 {
-	v[0] += v2.x;
-	v[1] += v2.y;
-	v[2] += v2.z;
+	v[0] += v2.X;
+	v[1] += v2.Y;
+	v[2] += v2.Z;
 
 	return (*this);
 }
 
 Vector3& Vector3::operator-=( const Vector3& v2)
 {
-	v[0] -= v2.x;
-	v[1] -= v2.y;
-	v[2] -= v2.z;
+	v[0] -= v2.X;
+	v[1] -= v2.Y;
+	v[2] -= v2.Z;
 	
 	return (*this);
 }
@@ -78,22 +78,22 @@ Vector3& Vector3::operator/=( float val)
 
 Vector3 Vector3::operator-( const Vector3& v2) const
 {
-	return Vector3(v[0] - v2.x, v[1] - v2.y, v[2] - v2.z);
+	return Vector3(v[0] - v2.X, v[1] - v2.Y, v[2] - v2.Z);
 }
 
 Vector3 Vector3::operator*( float val) const
 {
-	return Vector3(x*val, y*val, z*val);
+	return Vector3(X*val, Y*val, Z*val);
 }
 
 Vector3 Vector3::operator/( float val) const
 {
-	return Vector3(x/val, y/val, z/val);
+	return Vector3(X/val, Y/val, Z/val);
 }
 
 bool Vector3::operator==( const Vector3& v2) const
 {
-	return x==v2.x && y==v2.y && z==v2.z;
+	return X==v2.X && Y==v2.Y && Z==v2.Z;
 }
 
 bool Vector3::operator!=( const Vector3& v2) const
@@ -113,7 +113,7 @@ Vector3 Vector3::Cross( const Vector3 &v ) const
 
 float Vector3::LengthSq() const
 {
-	return x*x + y*y + z*z;
+	return X*X + Y*Y + Z*Z;
 }
 
 float Vector3::Length() const
@@ -131,15 +131,15 @@ float Vector3::Normalize()
 //Static functions
 float Vector3::Dot( const Vector3 &v1, const Vector3 &v2 )
 {
-	return v1.x*v2.x + v1.y*v2.y + v1.z*v2.z;
+	return v1.X*v2.X + v1.Y*v2.Y + v1.Z*v2.Z;
 }
 
 Vector3 Vector3::Cross( const Vector3 &v1, const Vector3 &v2 )
 {
 	return Vector3(
-		v1.y*v2.z - v1.z*v2.y,
-		v1.z*v2.x - v1.x*v2.z,
-		v1.x*v2.y - v1.y*v2.x
+		v1.Y*v2.Z - v1.Z*v2.Y,
+		v1.Z*v2.X - v1.X*v2.Z,
+		v1.X*v2.Y - v1.Y*v2.X
 		);
 }
 

@@ -83,10 +83,42 @@ LIB32=link.exe -lib
 # Begin Group "Source Files"
 
 # PROP Default_Filter "cpp;c;cxx;rc;def;r;odl;idl;hpj;bat"
+# Begin Source File
+
+SOURCE=.\GuiController.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\IntMatrix.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\TGCSimpleTerrain.cpp
+# End Source File
 # End Group
 # Begin Group "Header Files"
 
 # PROP Default_Filter "h;hpp;hxx;hm;inl"
+# Begin Source File
+
+SOURCE=.\GuiController.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\IntMatrix.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\IRenderObject.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\TGCSimpleTerrain.h
+# End Source File
+# End Group
+# Begin Group "XMLParser"
+
+# PROP Default_Filter ""
 # Begin Source File
 
 SOURCE=.\rapidxml.hpp
