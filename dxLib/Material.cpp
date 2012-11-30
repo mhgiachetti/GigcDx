@@ -10,7 +10,7 @@
 
 Material::Material()
 {
-	ZeroMemory(&Diffuse,((int)&Power - (int)&Diffuse) + sizeof(float));
+	ZeroMemory(this ,sizeof(Material));
 }
 
 Material::~Material()

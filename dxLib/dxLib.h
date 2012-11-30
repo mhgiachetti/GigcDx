@@ -8,6 +8,7 @@
 
 
 #include "globalDefines.h"
+#include "Caps.h"
 #include "ColorValue.h"
 #include "CustomVertex.h"
 #include "Device.h"
@@ -15,16 +16,20 @@
 #include "ExtendedMaterial.h"
 #include "IndexBuffer.h"
 #include "Light.h"
+#include "Manager.h"
 #include "Material.h"
 #include "Matrix.h"
 #include "Mesh.h"
 #include "Path.h"
+#include "PresentParameters.h"
 #include "RenderState.h"
+#include "SurfaceDescription.h"
 #include "Texture.h"
 #include "TextureLoader.h"
 #include "Transform.h"
-#include "Vector3.h"
 #include "Vector2.h"
+#include "Vector3.h"
+#include "Vector4.h"
 #include "VertexBuffer.h"
 
 

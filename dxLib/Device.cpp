@@ -3,6 +3,7 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "Device.h"
+#include "Manager.h"
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
@@ -16,6 +17,11 @@ Device::Device()
 Device::Device(LPD3DDEVICE device)
 {
 	SetDevice(device);
+}
+
+Device::Device( int adapter, DeviceType deviceType, HWND renderWindow, CreateFlags behaviorFlags, const PresentParameters &presentationParameters )
+{
+	Manager::GetInterface()->CreateDevice(adapter,(D3DDEVTYPE)deviceType,renderWindow, behaviorFlags, presentationParameters, &m_device);
 }
 
 Device::~Device()
@@ -67,7 +73,7 @@ void Device::SetDevice( LPD3DDEVICE device )
 	RenderState.SetDevice(device);
 }
 
-void Device::Release()
+void Device::Dispose()
 {
 	m_device->Release();
 }
@@ -115,6 +121,11 @@ void Device::DrawUserPrimitives( PrimitiveType pt, int primitiveCount,const void
 void Device::SetTexture( int stage, const Texture &texture )
 {
 	m_device->SetTexture(stage, texture);
+}
+
+void Device::SetSamplerState( int stage, SamplerStageStates state, int value )
+{
+	m_device->SetSamplerState(stage,(D3DSAMPLERSTATETYPE)state,value);
 }
 
 

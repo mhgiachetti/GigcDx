@@ -14,6 +14,7 @@
 #include "Light.h"
 #include "Material.h"
 #include "Texture.h"
+#include "PresentParameters.h"
 
 class Device  
 {
@@ -23,6 +24,10 @@ protected:
 public:
 	Device();
 	Device(LPD3DDEVICE device);
+
+	Device(
+		int adapter, DeviceType deviceType, HWND renderWindow, CreateFlags behaviorFlags,const PresentParameters &presentationParameters);
+
 	virtual ~Device();
 
 	Transform Transform;
@@ -38,11 +43,12 @@ public:
 	void setStreamSource(int streamNumber, LPD3DVERTEXBUFFER vb, int offset, int stride);
 	void setIndices(LPD3DINDEXBUFFER ib);
 	void SetTexture(int stage, const Texture &texture);
-	virtual void Release();
+	virtual void Dispose();
 
 	virtual void SetLight(int index, const Light &light);
 	virtual void LightEnable(int index, bool enable);
 	virtual void SetMaterial(const Material &mat);
+	void SetSamplerState(int stage, SamplerStageStates state, int value);
 
 	virtual void DrawPrimitives(PrimitiveType pt, int startVertex, int primitiveCount);
 	virtual void DrawIndexedPrimitives(PrimitiveType primitiveType, int baseVertex, int minVertexIndex,

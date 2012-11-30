@@ -108,6 +108,13 @@ bool Texture::Disposed()
 	return m_texture == NULL;
 }
 
+SurfaceDescription Texture::GetSurfaceDescription( int level )
+{
+	SurfaceDescription desc;
+	m_texture->GetLevelDesc(level,desc);
+	return desc;
+}
+
 
 
 

@@ -116,9 +116,9 @@ void SimpleDeviceWindow::CreateDevice()
 
 	m_d3ddevice.SetDevice(device);
 
-	device->SetSamplerState( 0, D3DSAMP_MINFILTER, D3DTEXF_ANISOTROPIC );
-	device->SetSamplerState( 0, D3DSAMP_MAGFILTER, D3DTEXF_ANISOTROPIC );
-	device->SetSamplerState( 0, D3DSAMP_MIPFILTER, D3DTEXF_ANISOTROPIC );
+	m_d3ddevice.SetSamplerState( 0, SamplerStageStates_MinFilter, TextureFilter_Anisotropic );
+	m_d3ddevice.SetSamplerState( 0, SamplerStageStates_MagFilter, TextureFilter_Anisotropic );
+	m_d3ddevice.SetSamplerState( 0, SamplerStageStates_MipFilter, TextureFilter_Anisotropic );
 }
 
 void SimpleDeviceWindow::MessageLoop()
@@ -154,7 +154,7 @@ void SimpleDeviceWindow::Render( double elapsed )
 
 void SimpleDeviceWindow::Dispose()
 {
-	m_d3ddevice.Release();
+	m_d3ddevice.Dispose();
 	m_d3d->Release();
 }
 

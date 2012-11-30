@@ -8,9 +8,10 @@
 #if _MSC_VER > 1000
 #pragma once
 #endif // _MSC_VER > 1000
-#include <d3dx9math.h>
+//#include "globalDefines.h"
+#include "Matrix.h"
 
-class Vector4  
+struct Vector4  
 {
 	union
 	{
@@ -50,6 +51,8 @@ public:
     bool operator == ( const Vector4& v2) const;
     bool operator != ( const Vector4& v2) const;
 
+	//statics
+	static Vector4 Transform( const Vector4& v2, const Matrix &mat);
 
 };
 

@@ -160,3 +160,183 @@ FillMode RenderState::GetFillMode()
 	m_device->GetRenderState(D3DRS_FILLMODE,&val);
 	return (FillMode)val;
 }
+
+void RenderState::SetSpecularEnable( bool enable )
+{
+	m_device->SetRenderState(D3DRS_SPECULARENABLE, enable);
+}
+
+bool RenderState::GetSpecularEnable()
+{
+	DWORD val;
+	m_device->GetRenderState(D3DRS_SPECULARENABLE,&val);
+	return val > 0;
+}
+
+void RenderState::SetShadeMode( ShadeMode mode )
+{
+	m_device->SetRenderState(D3DRS_SHADEMODE,mode);
+}
+
+ShadeMode RenderState::GetShadeMode()
+{
+	DWORD val;
+	m_device->GetRenderState(D3DRS_SHADEMODE,&val);
+	return (ShadeMode)val;
+}
+
+void RenderState::SetMultiSampleAntiAlias( bool enable )
+{
+	m_device->SetRenderState(D3DRS_MULTISAMPLEANTIALIAS, enable);
+}
+
+bool RenderState::GetMultiSampleAntiAlias()
+{
+	DWORD val;
+	m_device->GetRenderState(D3DRS_MULTISAMPLEANTIALIAS,&val);
+	return val > 0;
+}
+
+void RenderState::SetSlopeScaleDepthBias( float bias )
+{
+	m_device->SetRenderState(D3DRS_SLOPESCALEDEPTHBIAS, *((DWORD*)&bias));
+}
+
+float RenderState::GetSlopeScaleDepthBias()
+{
+	DWORD val;
+	m_device->GetRenderState(D3DRS_SLOPESCALEDEPTHBIAS,&val);
+	return *((float*)&val);
+}
+
+void RenderState::SetDepthBias( float bias )
+{
+	m_device->SetRenderState(D3DRS_DEPTHBIAS, *((DWORD*)&bias));
+}
+
+float RenderState::GetDepthBias()
+{
+	DWORD val;
+	m_device->GetRenderState(D3DRS_DEPTHBIAS,&val);
+	return *((float*)&val);
+}
+
+void RenderState::SetColorVertex( bool enable )
+{
+	m_device->SetRenderState(D3DRS_COLORVERTEX, enable);
+}
+
+bool RenderState::GetColorVertex()
+{
+	DWORD val;
+	m_device->GetRenderState(D3DRS_COLORVERTEX,&val);
+	return val > 0;	
+}
+
+void RenderState::SetFogEnable( bool enable )
+{
+	m_device->SetRenderState(D3DRS_FOGENABLE, enable);
+}
+
+bool RenderState::GetFogEnable()
+{
+	DWORD val;
+	m_device->GetRenderState(D3DRS_FOGENABLE,&val);
+	return val > 0;
+}
+
+void RenderState::SetAlphaTestEnable( bool enable )
+{
+	m_device->SetRenderState(D3DRS_ALPHATESTENABLE, enable);
+}
+
+bool RenderState::GetAlphaTestEnable()
+{
+	DWORD val;
+	m_device->GetRenderState(D3DRS_ALPHATESTENABLE,&val);
+	return val > 0;
+}
+
+void RenderState::SetReferenceAlpha( int value )
+{
+	m_device->SetRenderState(D3DRS_ALPHAREF, value);
+}
+
+int RenderState::GetReferenceAlpha()
+{
+	DWORD val;
+	m_device->GetRenderState(D3DRS_ALPHAREF,&val);
+	return val;
+}
+
+void RenderState::SetAlphaFunction( Compare function )
+{
+	m_device->SetRenderState(D3DRS_ALPHAFUNC, function);
+}
+
+Compare RenderState::GetAlphaFunction()
+{
+	DWORD val;
+	m_device->GetRenderState(D3DRS_ALPHAFUNC,&val);
+	return (Compare)val;
+}
+
+void RenderState::SetPointSpriteEnable( bool enable )
+{
+	m_device->SetRenderState(D3DRS_POINTSPRITEENABLE, enable);
+}
+
+bool RenderState::GetPointSpriteEnable()
+{
+	DWORD val;
+	m_device->GetRenderState(D3DRS_POINTSPRITEENABLE,&val);
+	return val > 0;
+}
+
+void RenderState::SetPointScaleEnable( bool enable )
+{
+	m_device->SetRenderState(D3DRS_POINTSCALEENABLE, enable);
+}
+
+bool RenderState::GetPointScaleEnable()
+{
+	DWORD val;
+	m_device->GetRenderState(D3DRS_POINTSCALEENABLE,&val);
+	return val > 0;
+}
+
+void RenderState::SetPointScaleA( float value )
+{
+	m_device->SetRenderState(D3DRS_POINTSCALE_A, *((DWORD*)&value));
+}
+
+float RenderState::GetPointScaleA()
+{
+	DWORD val;
+	m_device->GetRenderState(D3DRS_POINTSCALE_A,&val);
+	return *((float*)&val);
+}
+
+void RenderState::SetPointScaleB( float value )
+{
+	m_device->SetRenderState(D3DRS_POINTSCALE_B, *((DWORD*)&value));
+}
+
+float RenderState::GetPointScaleB()
+{
+	DWORD val;
+	m_device->GetRenderState(D3DRS_POINTSCALE_B,&val);
+	return *((float*)&val);
+}
+
+void RenderState::SetPointScaleC( float value )
+{
+	m_device->SetRenderState(D3DRS_POINTSCALE_C, *((DWORD*)&value));
+}
+
+float RenderState::GetPointScaleC()
+{
+	DWORD val;
+	m_device->GetRenderState(D3DRS_POINTSCALE_C,&val);
+	return *((float*)&val);
+}

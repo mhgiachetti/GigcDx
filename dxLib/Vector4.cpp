@@ -111,3 +111,13 @@ bool Vector4::operator!=( const Vector4& v2) const
 {
 	return !((*this)== v2);
 }
+
+Vector4 Vector4::Transform( const Vector4& v2, const Matrix & mat )
+{
+	return Vector4(
+		v2.X*mat.M11 + v2.Y*mat.M21 + v2.Z*mat.M31 + v2.W*mat.M41,
+		v2.X*mat.M12 + v2.Y*mat.M22 + v2.Z*mat.M32 + v2.W*mat.M42,
+		v2.X*mat.M13 + v2.Y*mat.M23 + v2.Z*mat.M33 + v2.W*mat.M43,
+		v2.X*mat.M14 + v2.Y*mat.M24 + v2.Z*mat.M34 + v2.W*mat.M44
+		);
+}

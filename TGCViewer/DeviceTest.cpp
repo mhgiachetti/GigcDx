@@ -5,6 +5,8 @@
 #include "stdafx.h"
 #include "TGCViewer.h"
 #include "DeviceTest.h"
+#include "..\tgcLib\TGCSimpleTerrain.h"
+#include "..\tgcLib\GuiController.h"
 
 #ifdef _DEBUG
 #undef THIS_FILE
@@ -17,6 +19,7 @@ static char THIS_FILE[]=__FILE__;
 //////////////////////////////////////////////////////////////////////
 XMesh mesh;
 Effect effect;
+TgcSimpleTerrain terrain;
 
 DeviceTest::DeviceTest():SimpleDeviceWindow(NULL)
 {
@@ -30,6 +33,9 @@ DeviceTest::~DeviceTest()
 
 void DeviceTest::Init3D()
 {
+	GuiController::newInstance();
+	GuiController::Instance.m_device = m_d3ddevice;
+
 	mesh = MeshLoader::LoadFromX(m_d3ddevice, "media\\x\\tiger.x");
 
 	string errors;
@@ -39,6 +45,10 @@ void DeviceTest::Init3D()
 	{
 		MessageBox(NULL,errors.c_str(),"",0);
 	}
+
+	terrain.loadHeightmap("media\\terrain\\heightmap.jpg",1,0.1f,Vector3(0,-150,0));
+	terrain.loadTexture("media\\terrain\\mapa.jpg");
+	terrain.SetEnabled(true);
 
 	init_light();
 
@@ -64,32 +74,36 @@ void DeviceTest::Render( double elapsed )
 	index += 0.03f;
 
 	Matrix matView;
-	matView.LookAtLH(Vector3(3.0f, 1.0f, 3.0f),Vector3(0.0f,0.0f,0.0f),	Vector3(0.0f,1.0f,0.0f));
+	Vector3 cameraPos = Vector3::TransformCoordinate(Vector3(12.0f, 7.0f, 12.0f), Matrix::SRotationYawPitchRoll(0,0,index/2));
+	matView.LookAtLH(cameraPos,Vector3(0.0f,0.0f,0.0f),	Vector3(0.0f,1.0f,0.0f));
 
 	m_d3ddevice.Transform.View(matView);
 
 	Matrix matProjection;
-	matProjection.PerspectiveFovLH(	D3DXToRadian(45),m_aspect_ratio,1.0f,100.0f);
+	matProjection.PerspectiveFovLH(	D3DXToRadian(45),m_aspect_ratio,1.0f,10000.0f);
 	m_d3ddevice.Transform.Projection(matProjection);
 
 	Matrix matTranslate; 
     matTranslate.RotationY(index);
+	matTranslate.Identity();
 	mesh.SetTransform(matTranslate);
 	m_d3ddevice.Transform.World(matTranslate);
 
 	effect.SetTechnique("Default");
-	effect.SetValue("matWorldViewProj",matTranslate*matView*matProjection);
+	//effect.SetValue("matWorldViewProj",matTranslate*matView*matProjection);
 
-	effect.SetValue("base_Tex",mesh.m_textures[0]);
+	//effect.SetValue("base_Tex",mesh.m_textures[0]);
+	
 
-	effect.Begin(FX_None);
-	effect.BeginPass(0);
+	//effect.Begin(FX_None);
+	//effect.BeginPass(0);
 
 	mesh.Render();
+	terrain.render();
 
 
-	effect.EndPass();
-	effect.End();
+	//effect.EndPass();
+	//effect.End();
 
 
 	m_d3ddevice.EndScene();
@@ -98,7 +112,7 @@ void DeviceTest::Render( double elapsed )
 
 void DeviceTest::Dispose()
 {
-	mesh.Release();
+	mesh.Dispose();
 	SimpleDeviceWindow::Dispose();
 }
 
@@ -127,5 +141,20 @@ void DeviceTest::init_light()
 
 	m_d3ddevice.SetMaterial(material);
 
+}
+
+void DeviceTest::MessageLoop()
+{
+	MSG msg;
+	while (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
+	{
+		TranslateMessage(&msg);
+		
+		
+		if (!m_accel || !TranslateAccelerator(AfxGetMainWnd()->m_hWnd, m_accel, &msg))
+			DispatchMessage(&msg);
+	}	
+	if (msg.message == WM_QUIT)
+		m_exit = true;
 }
 

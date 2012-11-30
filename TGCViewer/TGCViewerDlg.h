@@ -25,6 +25,8 @@ public:
 
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(CTGCViewerDlg)
+	public:
+	virtual BOOL PreTranslateMessage(MSG* pMsg);
 	protected:
 	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV support
 	//}}AFX_VIRTUAL
@@ -32,6 +34,7 @@ public:
 // Implementation
 protected:
 	HICON m_hIcon;
+	HACCEL  m_hAccelTable;
 
 	// Generated message map functions
 	//{{AFX_MSG(CTGCViewerDlg)
@@ -43,6 +46,7 @@ protected:
 	virtual void OnCancel();
 	afx_msg void OnSize(UINT nType, int cx, int cy);
 	afx_msg void OnVerWireframe();
+	afx_msg void OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags);
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };

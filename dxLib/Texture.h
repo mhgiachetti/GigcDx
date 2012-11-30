@@ -9,6 +9,7 @@
 #pragma once
 #endif // _MSC_VER > 1000
 #include "globalDefines.h"
+#include "SurfaceDescription.h"
 
 class Texture  
 {
@@ -31,6 +32,7 @@ public:
 	virtual void Dispose();
 	virtual bool Disposed();
 	virtual void Create(LPD3DDEVICE device, int width, int height, int numLevels, Usage usage, Format format, Pool pool);
+	virtual SurfaceDescription GetSurfaceDescription(int level);
 	
 	void SetTexture(LPD3DTEXTURE texture);
 

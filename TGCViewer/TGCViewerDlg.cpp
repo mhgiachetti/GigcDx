@@ -90,6 +90,7 @@ BEGIN_MESSAGE_MAP(CTGCViewerDlg, CDialog)
 	ON_WM_QUERYDRAGICON()
 	ON_WM_SIZE()
 	ON_COMMAND(ID_VER_WIREFRAME, OnVerWireframe)
+	ON_WM_KEYDOWN()
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -122,17 +123,16 @@ BOOL CTGCViewerDlg::OnInitDialog()
 	//  when the application's main window is not a dialog
 	SetIcon(m_hIcon, TRUE);			// Set big icon
 	SetIcon(m_hIcon, FALSE);		// Set small icon
+
+	m_hAccelTable = LoadAccelerators(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDR_ACCELERATOR1));
 	
-	// TODO: Add extra initialization here
+	device.m_accel = m_hAccelTable;
 
 	this->ShowWindow(SW_SHOWMAXIMIZED);
 
 	device.m_hWnd = m_panel3d.m_hWnd;
 	device.Play();
 
-
-
-	
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
 
@@ -216,4 +216,20 @@ void CTGCViewerDlg::OnVerWireframe()
 		device.m_d3ddevice.RenderState.SetFillMode(FillMode_WireFrame);
 	else
 		device.m_d3ddevice.RenderState.SetFillMode(FillMode_Solid);
+}
+
+BOOL CTGCViewerDlg::PreTranslateMessage(MSG* pMsg) 
+{
+	if (m_hAccelTable) {
+		if (::TranslateAccelerator(m_hWnd, m_hAccelTable, pMsg)) {
+			return(TRUE);
+		}
+	}
+	
+	return CDialog::PreTranslateMessage(pMsg);
+}
+
+void CTGCViewerDlg::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags) 
+{
+	CDialog::OnKeyDown(nChar, nRepCnt, nFlags);
 }

@@ -9,7 +9,8 @@
 #pragma once
 #endif // _MSC_VER > 1000
 #include "globalDefines.h"
-#include "Vector3.h"
+
+struct Vector3;
 
 struct Matrix  
 {

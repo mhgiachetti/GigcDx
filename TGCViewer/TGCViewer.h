@@ -29,6 +29,7 @@ public:
 	//{{AFX_VIRTUAL(CTGCViewerApp)
 	public:
 	virtual BOOL InitInstance();
+	virtual BOOL PreTranslateMessage(MSG* pMsg);
 	//}}AFX_VIRTUAL
 
 // Implementation

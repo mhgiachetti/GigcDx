@@ -27,8 +27,10 @@ Package=<5>
 Package=<4>
 {{{
     Begin Project Dependency
-    Project_Dep_Name dxLib
-	Project_Dep_Name tgcLib
+    Project_Dep_Name dxLib	
+    End Project Dependency
+	Begin Project Dependency
+    Project_Dep_Name tgcLib
     End Project Dependency
 }}}
 

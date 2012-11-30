@@ -8,6 +8,8 @@
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 
+GuiController GuiController::Instance;
+
 GuiController::GuiController()
 {
 
@@ -28,5 +30,5 @@ void GuiController::newInstance()
 
 Device GuiController::D3dDevice()
 {
-	return Device();
+	return m_device;
 }

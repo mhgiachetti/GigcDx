@@ -121,6 +121,10 @@ SOURCE=.\XMesh.h
 # PROP Default_Filter ""
 # Begin Source File
 
+SOURCE=.\Caps.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\ColorValue.h
 # End Source File
 # Begin Source File
@@ -130,6 +134,10 @@ SOURCE=.\CustomVertex.h
 # Begin Source File
 
 SOURCE=.\Device.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\DeviceCaps.h
 # End Source File
 # Begin Source File
 
@@ -157,6 +165,10 @@ SOURCE=.\Light.h
 # End Source File
 # Begin Source File
 
+SOURCE=.\Manager.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\Material.h
 # End Source File
 # Begin Source File
@@ -173,7 +185,15 @@ SOURCE=.\Path.h
 # End Source File
 # Begin Source File
 
+SOURCE=.\PresentParameters.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\RenderState.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\SurfaceDescription.h
 # End Source File
 # Begin Source File
 
@@ -189,7 +209,15 @@ SOURCE=.\Transform.h
 # End Source File
 # Begin Source File
 
+SOURCE=.\Vector2.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\Vector3.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Vector4.h
 # End Source File
 # Begin Source File
 
@@ -201,11 +229,19 @@ SOURCE=.\VertexBuffer.h
 # PROP Default_Filter ""
 # Begin Source File
 
+SOURCE=.\Caps.cpp
+# End Source File
+# Begin Source File
+
 SOURCE=.\ColorValue.cpp
 # End Source File
 # Begin Source File
 
 SOURCE=.\Device.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\DeviceCaps.cpp
 # End Source File
 # Begin Source File
 
@@ -225,6 +261,10 @@ SOURCE=.\Light.cpp
 # End Source File
 # Begin Source File
 
+SOURCE=.\Manager.cpp
+# End Source File
+# Begin Source File
+
 SOURCE=.\Material.cpp
 # End Source File
 # Begin Source File
@@ -241,7 +281,15 @@ SOURCE=.\Path.cpp
 # End Source File
 # Begin Source File
 
+SOURCE=.\PresentParameters.cpp
+# End Source File
+# Begin Source File
+
 SOURCE=.\RenderState.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\SurfaceDescription.cpp
 # End Source File
 # Begin Source File
 
@@ -257,28 +305,20 @@ SOURCE=.\Transform.cpp
 # End Source File
 # Begin Source File
 
+SOURCE=.\Vector2.cpp
+# End Source File
+# Begin Source File
+
 SOURCE=.\Vector3.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Vector4.cpp
 # End Source File
 # Begin Source File
 
 SOURCE=.\VertexBuffer.cpp
 # End Source File
 # End Group
-# Begin Source File
-
-<<<<<<< HEAD
-SOURCE=.\Vector2.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\Vector2.h
-=======
-SOURCE=.\Vector4.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\Vector4.h
->>>>>>> 10b0f0a4b5df5489e449224e1712f039f98c6907
-# End Source File
 # End Target
 # End Project

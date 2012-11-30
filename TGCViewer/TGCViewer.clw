@@ -12,19 +12,22 @@ Class1=CTGCViewerApp
 Class2=CTGCViewerDlg
 Class3=CAboutDlg
 
-ResourceCount=6
+ResourceCount=7
 Resource1=IDD_ABOUTBOX
 Resource2=IDR_MAINFRAME
 Resource3=IDD_TGCVIEWER_DIALOG
-Resource4=IDD_TGCVIEWER_DIALOG (Spanish (Modern))
+Resource4=IDR_MENU1
 Resource5=IDD_ABOUTBOX (Spanish (Modern))
-Resource6=IDR_MENU1
+Resource6=IDD_TGCVIEWER_DIALOG (Spanish (Modern))
+Resource7=IDR_ACCELERATOR1
 
 [CLS:CTGCViewerApp]
 Type=0
 HeaderFile=TGCViewer.h
 ImplementationFile=TGCViewer.cpp
 Filter=N
+BaseClass=CWinApp
+VirtualFilter=AC
 
 [CLS:CTGCViewerDlg]
 Type=0
@@ -33,7 +36,7 @@ ImplementationFile=TGCViewerDlg.cpp
 Filter=D
 BaseClass=CDialog
 VirtualFilter=dWC
-LastObject=ID_VER_WIREFRAME
+LastObject=CTGCViewerDlg
 
 [CLS:CAboutDlg]
 Type=0
@@ -42,7 +45,7 @@ ImplementationFile=TGCViewerDlg.cpp
 Filter=D
 BaseClass=CDialog
 VirtualFilter=dWC
-LastObject=IDOK
+LastObject=CAboutDlg
 
 [DLG:IDD_ABOUTBOX]
 Type=1
@@ -88,4 +91,10 @@ Command5=ID_VER_EJECUTARENFULLSCREEN
 Command6=ID_VER_MOSTRARPOSICIONDELACAMARA
 Command7=IDM_ABOUTBOX
 CommandCount=7
+
+[ACL:IDR_ACCELERATOR1]
+Type=1
+Class=?
+Command1=ID_VER_WIREFRAME
+CommandCount=1
 

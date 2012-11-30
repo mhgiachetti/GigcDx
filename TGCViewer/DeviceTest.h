@@ -13,12 +13,14 @@
 class DeviceTest : public SimpleDeviceWindow  
 {
 public:
+	HACCEL m_accel;
 	DeviceTest();
 	virtual ~DeviceTest();
 
 	virtual void Init3D();
 	virtual void Render(double elapsed);
 	virtual void Dispose();
+	virtual void MessageLoop();
 	void init_light();
 
 };

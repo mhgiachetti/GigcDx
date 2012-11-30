@@ -88,6 +88,7 @@ void TgcSimpleTerrain::loadHeightmap(string heightmapPath, float scaleXZ, float 
 
 
 	//Crear vertexBuffer
+	int vertexSize = CustomVertex::PositionTextured::Size();
 	totalVertices = 2 * 3 * (heightmapData.GetLength(0) - 1) * (heightmapData.GetLength(1) - 1);
 	vbTerrain.Create(d3dDevice, CustomVertex::PositionTextured::Size()*totalVertices, Usage_Dynamic | Usage_WriteOnly, CustomVertex::PositionTextured::Format(), Pool_Default);
 
@@ -130,7 +131,7 @@ void TgcSimpleTerrain::loadHeightmap(string heightmapPath, float scaleXZ, float 
 	}
 
 
-	vbTerrain.SetData(&(data[0]), 0, LockFlags_None);
+	vbTerrain.SetData(&(data[0]), totalVertices*vertexSize, LockFlags_None);
 }
 
 /// <summary>
@@ -157,18 +158,26 @@ void TgcSimpleTerrain::loadTexture(string path)
 /// </summary>
 IntMatrix TgcSimpleTerrain::loadHeightMap(Device d3dDevice, string path)
 {
-	Bitmap bitmap = (Bitmap)Bitmap.FromFile(path);
-	int width = bitmap.Size.Width;
-	int height = bitmap.Size.Height;
-	int[,] heightmap = new int[width, height];
+	Texture bitmap = TextureLoader::FromFile(d3dDevice,path.c_str(),0,0,1,Usage_None, Format_X8R8G8B8,Pool_Managed,Filter_None,Filter_None,0);
+	SurfaceDescription desc = bitmap.GetSurfaceDescription(0);
+
+	int pitch;
+	byte * bdata = (byte*)bitmap.LockRectangle(0,LockFlags_ReadOnly,pitch);
+
+	int width = desc.Width;
+	int height = desc.Height;
+	IntMatrix heightmap(width, height);
 	for (int i = 0; i < width; i++)
 	{
 		for (int j = 0; j < height; j++)
 		{
 			//(j, i) invertido para primero barrer filas y despues columnas
-			Color pixel = bitmap.GetPixel(j, i);
-			float intensity = pixel.R * 0.299f + pixel.G * 0.587f + pixel.B * 0.114f;
-			heightmap[i, j] = (int)intensity;
+			int offset = j*pitch + i*4;
+			byte r = bdata[offset + 0];
+			byte g = bdata[offset + 1];
+			byte b = bdata[offset + 2];
+			float intensity = r * 0.299f + g * 0.587f + b * 0.114f;
+			heightmap.SetItem(i, j, (int)intensity);
 		}
     
 	}
@@ -186,17 +195,17 @@ void TgcSimpleTerrain::render()
 	if (!enabled)
 		return;
 
-	Device d3dDevice = GuiController.Instance.D3dDevice;
-	d3dDevice.Transform.World = Matrix.Identity;
+	Device d3dDevice = GuiController.Instance.D3dDevice();
+	d3dDevice.Transform.World(Matrix::SIdentity());
 
 	//Render terrain 
 	d3dDevice.SetTexture(0, terrainTexture);
-	d3dDevice.SetTexture(1, null);
-	d3dDevice.Material = TgcD3dDevice.DEFAULT_MATERIAL;
+	d3dDevice.SetTexture(1, NULL);
+	d3dDevice.SetMaterial(TgcD3dDevice::DEFAULT_MATERIAL);
 
-	d3dDevice.VertexFormat = CustomVertex.PositionTextured.Format;
-	d3dDevice.SetStreamSource(0, vbTerrain, 0);
-	d3dDevice.DrawPrimitives(PrimitiveType.TriangleList, 0, totalVertices / 3);
+	d3dDevice.SetVertexFormat(CustomVertex::PositionTextured::Format());
+	d3dDevice.setStreamSource(0, vbTerrain, 0,CustomVertex::PositionTextured::Size());
+	d3dDevice.DrawPrimitives(PrimitiveType_TriangleList, 0, totalVertices / 3);
 }
 
 Vector3 TgcSimpleTerrain::GetPosition()
@@ -211,4 +220,5 @@ void TgcSimpleTerrain::dispose()
 {
 	vbTerrain.Dispose();
 	terrainTexture.Dispose();
+	heightmapData.Free();
 }

@@ -154,6 +154,21 @@ Vector3::operator D3DXVECTOR3*() const
 	return (D3DXVECTOR3*)this;
 }
 
+Vector4 Vector3::Transform( const Vector3 &v, const Matrix &mat )
+{
+	return Vector4::Transform(Vector4(v.X,v.Y,v.Z, 1), mat);
+}
+
+Vector4 Vector3::TransformCoordinate( const Vector3 &v, const Matrix &mat)
+{
+	return Vector4::Transform(Vector4(v.X,v.Y,v.Z, 1), mat);
+}
+
+Vector4 Vector3::TransformNormal( const Vector3 &v, const Matrix &mat )
+{
+	return Vector4::Transform(Vector4(v.X,v.Y,v.Z, 0), mat);
+}
+
 
 
 

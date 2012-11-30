@@ -18,6 +18,7 @@ private:
 	~TextureLoader();
 public:
 	static Texture FromFile(LPD3DDEVICE device, const char * srcFile);
+	static Texture FromFile(LPD3DDEVICE device, const char * srcFile, int width, int height, int mipLevela, Usage usage, Format format, Pool pool, Filter filter, Filter mipFilter, int colorKey);
 	static void Save(const char *dstFile, ImageFileFormat format, LPD3DTEXTURE texture);
 };
 

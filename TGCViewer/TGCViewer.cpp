@@ -72,3 +72,10 @@ BOOL CTGCViewerApp::InitInstance()
 	//  application, rather than start the application's message pump.
 	return FALSE;
 }
+
+BOOL CTGCViewerApp::PreTranslateMessage(MSG* pMsg) 
+{
+	// TODO: Add your specialized code here and/or call the base class
+	
+	return CWinApp::PreTranslateMessage(pMsg);
+}

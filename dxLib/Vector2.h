@@ -26,6 +26,31 @@ public:
 	Vector2( float x, float y);
 	~Vector2();
 
+	// casting
+    operator float* ();
+    operator const float* () const;
+	
+    // assignment operators
+    Vector2& operator += ( const Vector2& v2);
+    Vector2& operator -= ( const Vector2& v2);
+    Vector2& operator *= ( float val);
+    Vector2& operator /= ( float val);
+	
+    // unary operators
+    Vector2 operator + () const;
+    Vector2 operator - () const;
+	
+    // binary operators
+    Vector2 operator + ( const Vector2& v2) const;
+    Vector2 operator - ( const Vector2& v2) const;
+    Vector2 operator * ( float val) const;
+    Vector2 operator / ( float val) const;
+	
+    friend Vector2 operator * ( float, const Vector2& );
+	
+    bool operator == ( const Vector2& v2) const;
+    bool operator != ( const Vector2& v2) const;
+
     
     
 

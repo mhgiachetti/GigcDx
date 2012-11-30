@@ -10,6 +10,9 @@
 #endif // _MSC_VER > 1000
 
 #include "globalDefines.h"
+#include "Matrix.h"
+#include "Vector4.h"
+
 
 struct Vector3  
 {
@@ -38,6 +41,9 @@ public:
 	static float Dot(const Vector3 &v1, const Vector3 &v2);
 	static Vector3 Cross(const Vector3 &v1, const Vector3 &v2);
 	static Vector3 Normalize(const Vector3 &v);
+	static Vector4 Transform(const Vector3 &v, const Matrix &mat);
+	static Vector4 TransformCoordinate(const Vector3 &v, const Matrix &mat);
+	static Vector4 TransformNormal(const Vector3 &v, const Matrix &mat);
 	
 	
 	float Dot(const Vector3 &v) const;

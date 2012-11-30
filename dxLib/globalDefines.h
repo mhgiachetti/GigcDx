@@ -21,6 +21,7 @@
 #define Direct3DCreate Direct3DCreate9
 #define D3DLIGHT D3DLIGHT9
 #define D3DMATERIAL D3DMATERIAL9
+#define D3DCAPS D3DCAPS9
 
 //redefiniciones
 #define VertexBufferDescription D3DVERTEXBUFFER_DESC
@@ -327,5 +328,158 @@ enum FillMode
 	FillMode_WireFrame = 2,
 	FillMode_Solid = 3,
 };
+
+enum Filter
+{
+	Filter_None = 1,
+	Filter_Point = 2,
+	Filter_Linear = 3,
+	Filter_Triangle = 4,
+	Filter_Box = 5,
+	Filter_MirrorU = 65536,
+	Filter_MirrorV = 131072,
+	Filter_MirrorW = 262144,
+	Filter_Mirror = 458752,
+	Filter_Dither = 524288,
+	Filter_DitherDiffusion = 1048576,
+	Filter_SrgbIn = 2097152,
+	Filter_SrgbOut = 4194304,
+	Filter_Srgb = 6291456,
+};
+
+enum MultiSampleType
+{
+	MultiSampleType_None,
+	MultiSampleType_NonMaskable,
+	MultiSampleType_TwoSamples,
+	MultiSampleType_ThreeSamples,
+	MultiSampleType_FourSamples,
+	MultiSampleType_FiveSamples,
+	MultiSampleType_SixSamples,
+	MultiSampleType_SevenSamples,
+	MultiSampleType_EightSamples,
+	MultiSampleType_NineSamples,
+	MultiSampleType_TenSamples,
+	MultiSampleType_ElevenSamples,
+	MultiSampleType_TwelveSamples,
+	MultiSampleType_ThirteenSamples,
+	MultiSampleType_FourteenSamples,
+	MultiSampleType_FifteenSamples,
+	MultiSampleType_SixteenSamples,
+};
+
+enum ShadeMode
+{
+	ShadeMode_Flat = 1,
+	ShadeMode_Gouraud = 2,
+	ShadeMode_Phong = 3,
+};
+
+enum Compare
+{
+	Compare_Never = 1,
+	Compare_Less = 2,
+	Compare_Equal = 3,
+	Compare_LessEqual = 4,
+	Compare_Greater = 5,
+	Compare_NotEqual = 6,
+	Compare_GreaterEqual = 7,
+	Compare_Always = 8,
+};
+
+enum SamplerStageStates
+{
+	SamplerStageStates_AddressU = 1,
+	SamplerStageStates_AddressV = 2,
+	SamplerStageStates_AddressW = 3,
+	SamplerStageStates_BorderColor = 4,
+	SamplerStageStates_MagFilter = 5,
+	SamplerStageStates_MinFilter = 6,
+	SamplerStageStates_MipFilter = 7,
+	SamplerStageStates_MipMapLevelOfDetailBias = 8,
+	SamplerStageStates_MaxMipLevel = 9,
+	SamplerStageStates_MaxAnisotropy = 10,
+	SamplerStageStates_SrgbTexture = 11,
+	SamplerStageStates_ElementIndex = 12,
+	SamplerStageStates_DMapOffset = 13,
+};
+
+enum TextureFilter
+{
+	TextureFilter_None = 0,
+	TextureFilter_Point = 1,
+	TextureFilter_Linear = 2,
+	TextureFilter_Anisotropic = 3,
+	TextureFilter_PyramidalQuad = 6,
+	TextureFilter_GaussianQuad = 7,
+};
+
+enum CreateFlags
+{
+	CreateFlags_FpuPreserve = 2,
+	CreateFlags_MultiThreaded = 4,
+	CreateFlags_PureDevice = 16,
+	CreateFlags_SoftwareVertexProcessing = 32,
+	CreateFlags_HardwareVertexProcessing = 64,
+	CreateFlags_MixedVertexProcessing = 128,
+	CreateFlags_DisableDriverManagement = 256,
+	CreateFlags_AdapterGroupDevice = 512,
+	CreateFlags_DisableDriverManagementEx = 1024,
+	CreateFlags_NoWindowChanges = 2048,
+};
+inline CreateFlags operator|(CreateFlags a, CreateFlags b)
+{return (CreateFlags)((int)a | (int)b);}
+
+enum SwapEffect
+{
+	SwapEffect_Discard = 1,
+	SwapEffect_Flip = 2,
+	SwapEffect_Copy = 3,
+};
+
+enum PresentInterval
+{
+	PresentInterval_Immediate = D3DPRESENT_INTERVAL_IMMEDIATE,
+	PresentInterval_Default = 0,
+	PresentInterval_One = 1,
+	PresentInterval_Two = 2,
+	PresentInterval_Three = 4,
+	PresentInterval_Four = 8,
+};
+
+enum DepthFormat
+{
+	DepthFormat_Unknown = 0,
+	DepthFormat_D16Lockable = 70,
+	DepthFormat_D32 = 71,
+	DepthFormat_D15S1 = 73,
+	DepthFormat_D24S8 = 75,
+	DepthFormat_D24X8 = 77,
+	DepthFormat_D24X4S4 = 79,
+	DepthFormat_D16 = 80,
+	DepthFormat_L16 = 81,
+	DepthFormat_D32SingleLockable = 82,
+	DepthFormat_D24SingleS8 = 83,
+};
+
+enum PresentFlag
+{
+	PresentFlag_None = 0,
+	PresentFlag_LockableBackBuffer = 1,
+	PresentFlag_DiscardDepthStencil = 2,
+	PresentFlag_DeviceClip = 4,
+	PresentFlag_Video = 16,
+};
+inline PresentFlag operator|(PresentFlag a, PresentFlag b)
+{return (PresentFlag)((int)a | (int)b);}
+
+enum DeviceType
+{
+	DeviceType_Hardware = 1,
+	DeviceType_Reference = 2,
+	DeviceType_Software = 3,
+	DeviceType_NullReference = 4,
+};
+
 
 #endif // !defined(AFX_GLOBALDEFINES_H__5E38DA35_59BB_45B6_8C48_31D491EDCA96__INCLUDED_)

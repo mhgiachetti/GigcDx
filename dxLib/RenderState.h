@@ -43,6 +43,36 @@ public:
 	virtual float GetPointSize();
 	virtual void SetFillMode(FillMode mode);
 	virtual FillMode GetFillMode();
+	virtual void SetSpecularEnable(bool enable);
+	virtual bool GetSpecularEnable();
+	virtual void SetShadeMode(ShadeMode mode);
+	virtual ShadeMode GetShadeMode();
+	virtual void SetMultiSampleAntiAlias(bool enable);
+	virtual bool GetMultiSampleAntiAlias();
+	virtual void SetSlopeScaleDepthBias(float bias);
+	virtual float GetSlopeScaleDepthBias();
+	virtual void SetDepthBias(float bias);
+	virtual float GetDepthBias();
+	virtual void SetColorVertex(bool enable);
+	virtual bool GetColorVertex();
+	virtual void SetFogEnable(bool enable);
+	virtual bool GetFogEnable();
+	virtual void SetAlphaTestEnable(bool enable);
+	virtual bool GetAlphaTestEnable();
+	virtual void SetReferenceAlpha(int value);
+	virtual int GetReferenceAlpha();
+	virtual void SetAlphaFunction(Compare function);
+	virtual Compare GetAlphaFunction();
+	virtual void SetPointSpriteEnable(bool enable);
+	virtual bool GetPointSpriteEnable();
+	virtual void SetPointScaleEnable(bool enable);
+	virtual bool GetPointScaleEnable();
+	virtual void SetPointScaleA(float value);
+	virtual float GetPointScaleA();
+	virtual void SetPointScaleB(float value);
+	virtual float GetPointScaleB();
+	virtual void SetPointScaleC(float value);
+	virtual float GetPointScaleC();
 
 
 

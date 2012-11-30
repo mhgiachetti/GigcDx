@@ -9,6 +9,7 @@
 #pragma once
 #endif // _MSC_VER > 1000
 #include "..\dxLib\dxLib.h"
+#include "TgcD3dDevice.h"
 
 class GuiController  
 {
@@ -16,16 +17,17 @@ public:
 	
 
 public:
-	static GuiController &Instance;
+	static GuiController Instance;
 	
 	GuiController();
 	virtual ~GuiController();
 
-protected:
-	
+//protected:
+public:	
 	static void newInstance();
 
 public:
+	Device m_device;
 	/// <summary>
 	/// Direct3D Device
 	/// </summary>

@@ -218,6 +218,17 @@ BEGIN
     END
 END
 
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_ACCELERATOR1 ACCELERATORS DISCARDABLE 
+BEGIN
+    "W",            ID_VER_WIREFRAME,       VIRTKEY, ALT, NOINVERT
+END
+
 #endif    // Spanish (Castilian) (unknown sub-lang: 0xB) resources
 /////////////////////////////////////////////////////////////////////////////
 

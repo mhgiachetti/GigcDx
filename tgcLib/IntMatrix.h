@@ -20,9 +20,11 @@ public:
 
 public:
 	IntMatrix();
+	IntMatrix(int width, int height);
 	virtual ~IntMatrix();
 	void Resize(int width, int height);
 	int GetLength(int dimension);
+	void Free();
 
 	int GetItem(int i, int j);
 	void SetItem(int i, int j, int value);

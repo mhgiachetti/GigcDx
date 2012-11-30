@@ -13,11 +13,15 @@ IntMatrix::IntMatrix()
 	m_data = NULL;
 }
 
+IntMatrix::IntMatrix( int width, int height )
+{
+	m_data = NULL;
+	Resize(width,height);
+}
+
 IntMatrix::~IntMatrix()
 {
-	if(m_data)
-		delete [] m_data;
-
+	
 }
 
 void IntMatrix::Resize( int width, int height )
@@ -40,4 +44,10 @@ int IntMatrix::GetItem( int i, int j )
 void IntMatrix::SetItem( int i, int j, int value )
 {
 	m_data[j*m_width + i] = value;
+}
+
+void IntMatrix::Free()
+{
+	if(m_data)
+		delete [] m_data;
 }

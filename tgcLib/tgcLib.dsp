@@ -89,7 +89,15 @@ SOURCE=.\GuiController.cpp
 # End Source File
 # Begin Source File
 
+SOURCE=.\HighResolutionTimer.cpp
+# End Source File
+# Begin Source File
+
 SOURCE=.\IntMatrix.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\TgcD3dDevice.cpp
 # End Source File
 # Begin Source File
 
@@ -105,11 +113,19 @@ SOURCE=.\GuiController.h
 # End Source File
 # Begin Source File
 
+SOURCE=.\HighResolutionTimer.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\IntMatrix.h
 # End Source File
 # Begin Source File
 
 SOURCE=.\IRenderObject.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\TgcD3dDevice.h
 # End Source File
 # Begin Source File
 
