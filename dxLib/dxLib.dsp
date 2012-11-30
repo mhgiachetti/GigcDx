@@ -264,5 +264,13 @@ SOURCE=.\Vector3.cpp
 SOURCE=.\VertexBuffer.cpp
 # End Source File
 # End Group
+# Begin Source File
+
+SOURCE=.\Vector4.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Vector4.h
+# End Source File
 # End Target
 # End Project
