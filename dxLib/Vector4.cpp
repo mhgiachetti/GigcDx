@@ -1,0 +1,113 @@
+// Vector4.cpp: implementation of the Vector4 class.
+//
+//////////////////////////////////////////////////////////////////////
+
+#include "Vector4.h"
+
+//////////////////////////////////////////////////////////////////////
+// Construction/Destruction
+//////////////////////////////////////////////////////////////////////
+
+Vector4::Vector4()
+{
+	ZeroMemory(v, sizeof(v));
+}
+
+Vector4::Vector4( float x, float y, float z, float w )
+{
+	X = x;
+	Y = y;
+	Z = z;
+	W = w;
+}
+
+Vector4::~Vector4()
+{
+
+}
+
+Vector4::operator float*()
+{
+	return (float *)v;
+}
+
+Vector4::operator const float*() const
+{
+	return (const float *)v;
+}
+
+Vector4& Vector4::operator+=( const Vector4& v2)
+{
+	X += v2.X;
+	Y += v2.Y;
+	Z += v2.Z;
+	W += v2.W;
+	return (*this);
+}
+
+Vector4& Vector4::operator-=( const Vector4& v2)
+{
+	X -= v2.X;
+	Y -= v2.Y;
+	Z -= v2.Z;
+	W -= v2.W;
+	return (*this);
+}
+
+Vector4& Vector4::operator*=( float val )
+{
+	X *= val;
+	Y *= val;
+	Z *= val;
+	W *= val;
+	return (*this);
+}
+
+Vector4& Vector4::operator/=( float val )
+{
+	X *= val;
+	Y *= val;
+	Z *= val;
+	W *= val;
+	return (*this);
+}
+
+Vector4 Vector4::operator+() const
+{
+	return Vector4(X,Y,Z,W);
+}
+
+Vector4 Vector4::operator+( const Vector4& v2) const
+{
+	return Vector4(X+v2.X,Y+v2.Y,Z+v2.Z,W+v2.W);
+}
+
+Vector4 Vector4::operator-() const
+{
+	return Vector4(-X,-Y,-Z,-W);
+}
+
+Vector4 Vector4::operator-( const Vector4& v2) const
+{
+	return Vector4(X+v2.X,Y+v2.Y,Z+v2.Z,W+v2.W);
+}
+
+Vector4 Vector4::operator*( float val) const
+{
+	return Vector4(X*val,Y*val,Z*val,W*val);
+}
+
+Vector4 Vector4::operator/( float val) const
+{
+	return Vector4(X/val,Y/val,Z/val,W/val);
+}
+
+bool Vector4::operator==( const Vector4& v2) const
+{
+	return X==v2.X && Y==v2.Y && Z==v2.Z && W==v2.W;
+}
+
+bool Vector4::operator!=( const Vector4& v2) const
+{
+	return !((*this)== v2);
+}

@@ -266,11 +266,19 @@ SOURCE=.\VertexBuffer.cpp
 # End Group
 # Begin Source File
 
+<<<<<<< HEAD
 SOURCE=.\Vector2.cpp
 # End Source File
 # Begin Source File
 
 SOURCE=.\Vector2.h
+=======
+SOURCE=.\Vector4.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Vector4.h
+>>>>>>> 10b0f0a4b5df5489e449224e1712f039f98c6907
 # End Source File
 # End Target
 # End Project
