@@ -14,6 +14,8 @@
 #include "Device.h"
 #include "Effect.h"
 #include "ExtendedMaterial.h"
+#include "Font.h"
+#include "FontDescription.h"
 #include "IndexBuffer.h"
 #include "Light.h"
 #include "Manager.h"
@@ -23,6 +25,7 @@
 #include "Path.h"
 #include "PresentParameters.h"
 #include "RenderState.h"
+#include "Sprite.h"
 #include "SurfaceDescription.h"
 #include "Texture.h"
 #include "TextureLoader.h"
@@ -31,6 +34,7 @@
 #include "Vector3.h"
 #include "Vector4.h"
 #include "VertexBuffer.h"
+#include "Viewport.h"
 
 
 //utils
@@ -38,6 +42,11 @@
 #include "MeshLoader.h"
 #include "SimpleDeviceWindow.h"
 #include "XMesh.h"
+
+//windows
+#include "WPoint.h"
+#include "WRectangle.h"
+#include "WSize.h"
 
 
 #endif

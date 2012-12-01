@@ -153,6 +153,14 @@ SOURCE=.\ExtendedMaterial.h
 # End Source File
 # Begin Source File
 
+SOURCE=.\Font.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\FontDescription.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\globalDefines.h
 # End Source File
 # Begin Source File
@@ -253,6 +261,14 @@ SOURCE=.\ExtendedMaterial.cpp
 # End Source File
 # Begin Source File
 
+SOURCE=.\Font.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\FontDescription.cpp
+# End Source File
+# Begin Source File
+
 SOURCE=.\IndexBuffer.cpp
 # End Source File
 # Begin Source File
@@ -320,5 +336,49 @@ SOURCE=.\Vector4.cpp
 SOURCE=.\VertexBuffer.cpp
 # End Source File
 # End Group
+# Begin Group "Windows"
+
+# PROP Default_Filter ""
+# Begin Source File
+
+SOURCE=.\WPoint.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\WPoint.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\WRectangle.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\WRectangle.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\WSize.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\WSize.h
+# End Source File
+# End Group
+# Begin Source File
+
+SOURCE=.\Sprite.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Sprite.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\ViewPort.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\ViewPort.h
+# End Source File
 # End Target
 # End Project

@@ -20,6 +20,7 @@ static char THIS_FILE[]=__FILE__;
 XMesh mesh;
 Effect effect;
 TgcSimpleTerrain terrain;
+Font font;
 
 DeviceTest::DeviceTest():SimpleDeviceWindow(NULL)
 {
@@ -49,6 +50,16 @@ void DeviceTest::Init3D()
 	terrain.loadHeightmap("media\\terrain\\heightmap.jpg",1,0.1f,Vector3(0,-150,0));
 	terrain.loadTexture("media\\terrain\\mapa.jpg");
 	terrain.SetEnabled(true);
+
+	FontDescription d;
+	d.Height = 64;
+	d.Width = 32;
+	d.Weight = FontWeight_Bold;
+	d.MipLevels = 1;
+	d.IsItalic = false;
+	d.SetCharSet(CharacterSet_Default);
+	d.SetFaceName("Times New Roman");
+	font = Font(m_d3ddevice,d);
 
 	init_light();
 
@@ -100,6 +111,7 @@ void DeviceTest::Render( double elapsed )
 
 	mesh.Render();
 	terrain.render();
+	font.DrawText(NULL,"SARASA",WRectangle(100,100,500,500),DrawTextFormat_NoClip,0);
 
 
 	//effect.EndPass();

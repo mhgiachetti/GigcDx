@@ -15,6 +15,7 @@
 #include "Material.h"
 #include "Texture.h"
 #include "PresentParameters.h"
+#include "ViewPort.h"
 
 class Device  
 {
@@ -56,9 +57,14 @@ public:
 	virtual void DrawUserPrimitives(PrimitiveType pt, int primitiveCount,const void * pVertices, int stride);
 
 	void SetDevice(LPD3DDEVICE device);
+
+	virtual Viewport GetViewport();
+	virtual void SetViewport(Viewport viewport);
 	
 	//operadores
 	operator LPD3DDEVICE( void );
+	operator LPD3DDEVICE( void ) const;
+	operator LPD3DDEVICE*( void ) const;
 
 };
 

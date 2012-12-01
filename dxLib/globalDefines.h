@@ -22,6 +22,7 @@
 #define D3DLIGHT D3DLIGHT9
 #define D3DMATERIAL D3DMATERIAL9
 #define D3DCAPS D3DCAPS9
+#define D3DVIEWPORT D3DVIEWPORT9
 
 //redefiniciones
 #define VertexBufferDescription D3DVERTEXBUFFER_DESC
@@ -481,5 +482,122 @@ enum DeviceType
 	DeviceType_NullReference = 4,
 };
 
+enum DrawTextFormat
+{
+	DrawTextFormat_Left = 0,
+	DrawTextFormat_None = 0,
+	DrawTextFormat_Top = 0,
+	DrawTextFormat_Center = 1,
+	DrawTextFormat_Right = 2,
+	DrawTextFormat_VerticalCenter = 4,
+	DrawTextFormat_Bottom = 8,
+	DrawTextFormat_WordBreak = 16,
+	DrawTextFormat_SingleLine = 32,
+	DrawTextFormat_ExpandTabs = 64,
+	DrawTextFormat_NoClip = 256,
+	DrawTextFormat_RightToLeftReading = 131072,
+};
+inline DrawTextFormat operator|(DrawTextFormat a, DrawTextFormat b)
+{return (DrawTextFormat)((int)a | (int)b);}
+
+enum SpriteFlags
+{
+	SpriteFlags_None = 0,
+	SpriteFlags_DoNotSaveState = 1,
+	SpriteFlags_DoNotModifyRenderState = 2,
+	SpriteFlags_ObjectSpace = 4,
+	SpriteFlags_Billboard = 8,
+	SpriteFlags_AlphaBlend = 16,
+	SpriteFlags_SortTexture = 32,
+	SpriteFlags_SortDepthFrontToBack = 64,
+	SpriteFlags_SortDepthBackToFront = 128,
+};
+inline SpriteFlags operator|(SpriteFlags a, SpriteFlags b)
+{return (SpriteFlags)((int)a | (int)b);}
+
+enum PitchAndFamily
+{
+	PitchAndFamily_DefaultPitch = 0,
+	PitchAndFamily_FamilyDoNotCare = 0,
+	PitchAndFamily_FixedPitch = 1,
+	PitchAndFamily_VariablePitch = 2,
+	PitchAndFamily_MonoFont = 8,
+	PitchAndFamily_FamilyRoman = 16,
+	PitchAndFamily_FamilySwiss = 32,
+	PitchAndFamily_FamilyModern = 48,
+	PitchAndFamily_FamilyScript = 64,
+	PitchAndFamily_FamilyDecorative = 80,
+};
+inline PitchAndFamily operator|(PitchAndFamily a, PitchAndFamily b)
+{return (PitchAndFamily)((int)a | (int)b);}
+
+enum FontQuality
+{
+	FontQuality_Default,
+	FontQuality_Draft,
+	FontQuality_Proof,
+	FontQuality_NonAntiAliased,
+	FontQuality_AntiAliased,
+	FontQuality_ClearType,
+	FontQuality_ClearTypeNatural,
+};
+
+enum Precision
+{
+	Precision_Default,
+	Precision_String,
+	Precision_Character,
+	Precision_Stroke,
+	Precision_Tt,
+	Precision_Device,
+	Precision_Raster,
+	Precision_TtOnly,
+	Precision_Outline,
+	Precision_ScreenOutline,
+	Precision_PsOnly,
+};
+
+enum CharacterSet
+{
+	CharacterSet_Ansi = 0,
+	CharacterSet_Default = 1,
+	CharacterSet_Symbol = 2,
+	CharacterSet_Mac = 77,
+	CharacterSet_ShiftJIS = 128,
+	CharacterSet_Hangeul = 129,
+	CharacterSet_Hangul = 129,
+	CharacterSet_Johab = 130,
+	CharacterSet_GB2312 = 134,
+	CharacterSet_ChineseBig5 = 136,
+	CharacterSet_Greek = 161,
+	CharacterSet_Turkish = 162,
+	CharacterSet_Vietnamese = 163,
+	CharacterSet_Hebrew = 177,
+	CharacterSet_Arabic = 178,
+	CharacterSet_Baltic = 186,
+	CharacterSet_Russian = 204,
+	CharacterSet_Thai = 222,
+	CharacterSet_EastEurope = 238,
+	CharacterSet_Oem = 255,
+};
+
+enum FontWeight
+{
+	FontWeight_DoNotCare = 0,
+	FontWeight_Thin = 100,
+	FontWeight_ExtraLight = 200,
+	FontWeight_UltraLight = 200,
+	FontWeight_Light = 300,
+	FontWeight_Normal = 400,
+	FontWeight_Regular = 400,
+	FontWeight_Medium = 500,
+	FontWeight_DemiBold = 600,
+	FontWeight_SemiBold = 600,
+	FontWeight_Bold = 700,
+	FontWeight_ExtraBold = 800,
+	FontWeight_UltraBold = 800,
+	FontWeight_Black = 900,
+	FontWeight_Heavy = 900,
+};
 
 #endif // !defined(AFX_GLOBALDEFINES_H__5E38DA35_59BB_45B6_8C48_31D491EDCA96__INCLUDED_)

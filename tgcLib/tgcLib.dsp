@@ -103,6 +103,10 @@ SOURCE=.\TgcD3dDevice.cpp
 
 SOURCE=.\TGCSimpleTerrain.cpp
 # End Source File
+# Begin Source File
+
+SOURCE=.\TgcText2d.cpp
+# End Source File
 # End Group
 # Begin Group "Header Files"
 
@@ -130,6 +134,10 @@ SOURCE=.\TgcD3dDevice.h
 # Begin Source File
 
 SOURCE=.\TGCSimpleTerrain.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\TgcText2d.h
 # End Source File
 # End Group
 # Begin Group "XMLParser"

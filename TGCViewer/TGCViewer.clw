@@ -16,9 +16,9 @@ ResourceCount=7
 Resource1=IDD_ABOUTBOX
 Resource2=IDR_MAINFRAME
 Resource3=IDD_TGCVIEWER_DIALOG
-Resource4=IDR_MENU1
-Resource5=IDD_ABOUTBOX (Spanish (Modern))
-Resource6=IDD_TGCVIEWER_DIALOG (Spanish (Modern))
+Resource4=IDD_TGCVIEWER_DIALOG (Spanish (Modern))
+Resource5=IDR_MENU1
+Resource6=IDD_ABOUTBOX (Spanish (Modern))
 Resource7=IDR_ACCELERATOR1
 
 [CLS:CTGCViewerApp]

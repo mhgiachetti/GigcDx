@@ -29,6 +29,11 @@ Device::~Device()
 
 }
 
+Device::operator LPD3DDEVICE( void ) const
+{
+	return m_device;
+}
+
 Device::operator LPD3DDEVICE( void )
 {
 	return m_device;
@@ -126,6 +131,24 @@ void Device::SetTexture( int stage, const Texture &texture )
 void Device::SetSamplerState( int stage, SamplerStageStates state, int value )
 {
 	m_device->SetSamplerState(stage,(D3DSAMPLERSTATETYPE)state,value);
+}
+
+Device::operator LPD3DDEVICE*( void ) const
+{
+	return (LPD3DDEVICE*)&m_device;
+	
+}
+
+Viewport Device::GetViewport()
+{
+	Viewport v;
+	m_device->GetViewport(v);
+	return v;
+}
+
+void Device::SetViewport( Viewport viewport )
+{
+	m_device->SetViewport(viewport);
 }
 
 
