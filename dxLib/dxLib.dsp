@@ -231,6 +231,10 @@ SOURCE=.\Vector4.h
 
 SOURCE=.\VertexBuffer.h
 # End Source File
+# Begin Source File
+
+SOURCE=.\ViewPort.h
+# End Source File
 # End Group
 # Begin Group "Source Files"
 
@@ -335,6 +339,10 @@ SOURCE=.\Vector4.cpp
 
 SOURCE=.\VertexBuffer.cpp
 # End Source File
+# Begin Source File
+
+SOURCE=.\ViewPort.cpp
+# End Source File
 # End Group
 # Begin Group "Windows"
 
@@ -371,14 +379,6 @@ SOURCE=.\Sprite.cpp
 # Begin Source File
 
 SOURCE=.\Sprite.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\ViewPort.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\ViewPort.h
 # End Source File
 # End Target
 # End Project

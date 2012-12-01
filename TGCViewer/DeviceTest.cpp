@@ -52,9 +52,9 @@ void DeviceTest::Init3D()
 	terrain.SetEnabled(true);
 
 	FontDescription d;
-	d.Height = 64;
-	d.Width = 32;
-	d.Weight = FontWeight_Bold;
+	d.Height = 15;
+	d.Width = 0;
+	d.Weight = FontWeight_Normal;
 	d.MipLevels = 1;
 	d.IsItalic = false;
 	d.SetCharSet(CharacterSet_Default);
@@ -82,10 +82,10 @@ void DeviceTest::Render( double elapsed )
 	m_d3ddevice.BeginScene();
 
 	static float index = 0;
-	index += 0.03f;
+	index += 0.50f*elapsed;
 
 	Matrix matView;
-	Vector3 cameraPos = Vector3::TransformCoordinate(Vector3(12.0f, 7.0f, 12.0f), Matrix::SRotationYawPitchRoll(0,0,index/2));
+	Vector3 cameraPos = Vector3::TransformCoordinate(Vector3(12.0f, 7.0f, 12.0f), Matrix::SRotationYawPitchRoll(0,0,index));
 	matView.LookAtLH(cameraPos,Vector3(0.0f,0.0f,0.0f),	Vector3(0.0f,1.0f,0.0f));
 
 	m_d3ddevice.Transform.View(matView);
@@ -111,8 +111,13 @@ void DeviceTest::Render( double elapsed )
 
 	mesh.Render();
 	terrain.render();
-	font.DrawText(NULL,"SARASA",WRectangle(100,100,500,500),DrawTextFormat_NoClip,0);
 
+	char fpsText[100];
+
+	sprintf(fpsText,"FPS:%d",m_timer.m_fps);
+
+	font.DrawText(NULL,fpsText,WRectangle(0,00,100,100),DrawTextFormat_NoClip,0xff000000);
+	
 
 	//effect.EndPass();
 	//effect.End();
