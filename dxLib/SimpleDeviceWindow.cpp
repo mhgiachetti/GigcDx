@@ -41,6 +41,7 @@ void SimpleDeviceWindow::DefaultParameters( int width /*= 800*/, int height /*= 
 	m_present_parameters.BackBufferHeight = height;
 	m_present_parameters.EnableAutoDepthStencil = TRUE;
 	m_present_parameters.AutoDepthStencilFormat = D3DFMT_D24S8;
+	m_present_parameters.PresentationInterval = D3DPRESENT_INTERVAL_IMMEDIATE;
 
 	m_wndclassex.cbSize = sizeof(WNDCLASSEX);
     m_wndclassex.style = CS_HREDRAW | CS_VREDRAW;
