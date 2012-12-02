@@ -30,3 +30,10 @@
 
 *Release*
 
+ipch
+*.sdf
+*.sln
+*.vcxproj
+/TGCViewer/*.filters
+*.user
+*.filters
