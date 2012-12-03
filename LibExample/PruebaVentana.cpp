@@ -56,7 +56,7 @@ void PruebaVentana::Render( double elapsed )
 	m_d3ddevice.BeginScene();
 
 	static float index = 0;
-	index += 0.03f;
+	index += 1.5f*elapsed;
 
 	Matrix matView;
 	matView.LookAtLH(Vector3(3.0f, 1.0f, 3.0f),Vector3(0.0f,0.0f,0.0f),	Vector3(0.0f,1.0f,0.0f));

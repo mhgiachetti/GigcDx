@@ -37,3 +37,6 @@ ipch
 /TGCViewer/*.filters
 *.user
 *.filters
+*.ncb
+*.opt
+*.plg
