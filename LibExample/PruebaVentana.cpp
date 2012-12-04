@@ -37,16 +37,16 @@ void PruebaVentana::Init3D()
 
 	init_light();
 
-	m_d3ddevice.RenderState.SetLighting(false);
-	m_d3ddevice.RenderState.SetCullMode(Cull_None);
-	m_d3ddevice.RenderState.SetZBufferEnable(true);
-	m_d3ddevice.RenderState.SetAmbient(D3DCOLOR_XRGB(50,50,50));
-	m_d3ddevice.RenderState.SetNormalizeNormals(true);
-	m_d3ddevice.RenderState.SetAlphaBlendEnable(true);
-	m_d3ddevice.RenderState.SetBlendOperation(BlendOperation_Add);
-	m_d3ddevice.RenderState.SetSourceBlend(Blend_SourceAlpha);
-	m_d3ddevice.RenderState.SetDestinationBlend(Blend_InvSourceAlpha);
-	m_d3ddevice.RenderState.SetFillMode(FillMode_Solid);
+	m_d3ddevice.RenderState.Lighting = false;
+	m_d3ddevice.RenderState.CullMode = Cull_None;
+	m_d3ddevice.RenderState.ZBufferEnable = true;
+	m_d3ddevice.RenderState.Ambient = D3DCOLOR_XRGB(50,50,50);
+	m_d3ddevice.RenderState.NormalizeNormals = true;
+	m_d3ddevice.RenderState.AlphaBlendEnable = true;
+	m_d3ddevice.RenderState.blendOperation = BlendOperation_Add;
+	m_d3ddevice.RenderState.SourceBlend = Blend_SourceAlpha; 
+	m_d3ddevice.RenderState.AlphaBlendEnable = true;
+	m_d3ddevice.RenderState.fillMode = FillMode_WireFrame;
 
 }
 
@@ -61,16 +61,16 @@ void PruebaVentana::Render( double elapsed )
 	Matrix matView;
 	matView.LookAtLH(Vector3(3.0f, 1.0f, 3.0f),Vector3(0.0f,0.0f,0.0f),	Vector3(0.0f,1.0f,0.0f));
 
-	m_d3ddevice.Transform.View(matView);
+	m_d3ddevice.Transform.View = matView;
 
 	Matrix matProjection;
 	matProjection.PerspectiveFovLH(	D3DXToRadian(45),m_aspect_ratio,1.0f,100.0f);
-	m_d3ddevice.Transform.Projection(matProjection);
+	m_d3ddevice.Transform.Projection = matProjection;
 
 	Matrix matTranslate; 
     matTranslate.RotationY(index);
 	mesh.SetTransform(matTranslate);
-	m_d3ddevice.Transform.World(matTranslate);
+	m_d3ddevice.Transform.World = matTranslate;
 
 	effect.SetTechnique("Default");
 	effect.SetValue("matWorldViewProj",matTranslate*matView*matProjection);
@@ -120,6 +120,6 @@ void PruebaVentana::init_light()
 	material.Diffuse = ColorValue(1.0f,1.0f,1.0f,1.0f);
 	material.Ambient = ColorValue(1.0f,1.0f,1.0f,1.0f);
 
-	m_d3ddevice.SetMaterial(material);
+	m_d3ddevice.material = material;
 
 }

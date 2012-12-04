@@ -88,12 +88,12 @@ LPD3DDEVICE IndexBuffer::GetDevice()
 }
 
 
-IndexBuffer::operator LPD3DINDEXBUFFER( void )
+IndexBuffer::operator LPD3DINDEXBUFFER( void ) const
 {
 	return m_iBuffer;
 }
 
 IndexBuffer::operator LPD3DINDEXBUFFER*( void )
 {
-	return &m_iBuffer;
+	return (LPD3DINDEXBUFFER *)&m_iBuffer;
 }

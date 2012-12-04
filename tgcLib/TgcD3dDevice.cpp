@@ -36,7 +36,7 @@ TgcD3dDevice::TgcD3dDevice( HWND panel3d )
 	
 	//Console.WriteLine("Max primitive count:" + caps.MaxPrimitiveCount);
 	
-	if (caps.deviceCaps.SupportsHardwareTransformAndLight())
+	if (caps.deviceCaps.SupportsHardwareTransformAndLight)
 		flags = CreateFlags_HardwareVertexProcessing;
 	else
 		flags = CreateFlags_SoftwareVertexProcessing;
@@ -65,7 +65,7 @@ TgcD3dDevice::TgcD3dDevice( HWND panel3d )
 	
 	//Crear Graphics Device
 	//Device.IsUsingEventHandlers = false;
-	D3dDevice = Device(0, DeviceType_Hardware, panel3d, flags, d3dpp);
+	d3dDevice = Device(0, DeviceType_Hardware, panel3d, flags, d3dpp);
 	//d3dDevice.DeviceReset += new System.EventHandler(this.OnResetDevice);
 }
 
@@ -85,40 +85,40 @@ void TgcD3dDevice::doResetDevice()
 void TgcD3dDevice::setDefaultValues()
 {
 	//Frustum values
-	D3dDevice.Transform.Projection(	
+	d3dDevice.Transform.Projection = 	
 		Matrix::SPerspectiveFovLH(D3DXToRadian(45.0f),
-		aspectRatio, zNearPlaneDistance, zFarPlaneDistance));
+		aspectRatio, zNearPlaneDistance, zFarPlaneDistance);
 
 	//Render state
-	D3dDevice.RenderState.SetSpecularEnable(false);
-	D3dDevice.RenderState.SetFillMode(FillMode_Solid);
-	D3dDevice.RenderState.SetCullMode(Cull_None);
-	D3dDevice.RenderState.SetShadeMode(ShadeMode_Gouraud);
-	D3dDevice.RenderState.SetMultiSampleAntiAlias(true);
-	D3dDevice.RenderState.SetSlopeScaleDepthBias(-0.1f);
-	D3dDevice.RenderState.SetDepthBias(0);
-	D3dDevice.RenderState.SetColorVertex(true);
-	D3dDevice.RenderState.SetLighting(false);
-	D3dDevice.RenderState.SetZBufferEnable(true);
-	D3dDevice.RenderState.SetFogEnable(false);
+	d3dDevice.RenderState.SpecularEnable = false;
+	d3dDevice.RenderState.fillMode = FillMode_Solid;
+	d3dDevice.RenderState.CullMode = Cull_None;
+	d3dDevice.RenderState.shadeMode = ShadeMode_Gouraud;
+	d3dDevice.RenderState.MultiSampleAntiAlias = true;
+	d3dDevice.RenderState.SlopeScaleDepthBias = -0.1f;
+	d3dDevice.RenderState.DepthBias = 0;
+	d3dDevice.RenderState.ColorVertex = true;
+	d3dDevice.RenderState.Lighting = false;
+	d3dDevice.RenderState.ZBufferEnable = true;
+	d3dDevice.RenderState.FogEnable = false;
 
 	//Alpha Blending
-	D3dDevice.RenderState.SetAlphaBlendEnable(false);
-	D3dDevice.RenderState.SetAlphaTestEnable(false);
-	D3dDevice.RenderState.SetReferenceAlpha(100);
-	D3dDevice.RenderState.SetAlphaFunction(Compare_Greater);
-	D3dDevice.RenderState.SetBlendOperation(BlendOperation_Add);
-	D3dDevice.RenderState.SetSourceBlend(Blend_SourceAlpha);
-	D3dDevice.RenderState.SetDestinationBlend(Blend_InvSourceAlpha);
+	d3dDevice.RenderState.AlphaBlendEnable = false;
+	d3dDevice.RenderState.AlphaTestEnable = false;
+	d3dDevice.RenderState.ReferenceAlpha = 100;
+	d3dDevice.RenderState.AlphaFunction = Compare_Greater;
+	d3dDevice.RenderState.blendOperation = BlendOperation_Add;
+	d3dDevice.RenderState.SourceBlend = Blend_SourceAlpha;
+	d3dDevice.RenderState.DestinationBlend = Blend_InvSourceAlpha;
 
 	//Texture Filtering
-	D3dDevice.SetSamplerState(0, SamplerStageStates_MinFilter, (int)TextureFilter_Linear);
-	D3dDevice.SetSamplerState(0, SamplerStageStates_MagFilter, (int)TextureFilter_Linear);
-	D3dDevice.SetSamplerState(0, SamplerStageStates_MipFilter, (int)TextureFilter_Linear);
+	d3dDevice.SetSamplerState(0, SamplerStageStates_MinFilter, (int)TextureFilter_Linear);
+	d3dDevice.SetSamplerState(0, SamplerStageStates_MagFilter, (int)TextureFilter_Linear);
+	d3dDevice.SetSamplerState(0, SamplerStageStates_MipFilter, (int)TextureFilter_Linear);
 
-	D3dDevice.SetSamplerState(1, SamplerStageStates_MinFilter, (int)TextureFilter_Linear);
-	D3dDevice.SetSamplerState(1, SamplerStageStates_MagFilter, (int)TextureFilter_Linear);
-	D3dDevice.SetSamplerState(1, SamplerStageStates_MipFilter, (int)TextureFilter_Linear);
+	d3dDevice.SetSamplerState(1, SamplerStageStates_MinFilter, (int)TextureFilter_Linear);
+	d3dDevice.SetSamplerState(1, SamplerStageStates_MagFilter, (int)TextureFilter_Linear);
+	d3dDevice.SetSamplerState(1, SamplerStageStates_MipFilter, (int)TextureFilter_Linear);
 
 	//Clear lights
 	//foreach (Light light in d3dDevice.Lights)
@@ -130,11 +130,11 @@ void TgcD3dDevice::setDefaultValues()
 	//GuiController::Instance.TexturesManager.clearAll();
 
 	//Reset Material
-	D3dDevice.SetMaterial(DEFAULT_MATERIAL);
+	d3dDevice.material = DEFAULT_MATERIAL;
 	ClearColor = DEFAULT_CLEAR_COLOR;
 
 	//Limpiar IndexBuffer
-	D3dDevice.setIndices(NULL);
+	d3dDevice.Indices = NULL;
 
 
 
@@ -151,16 +151,16 @@ void TgcD3dDevice::setDefaultValues()
 
 void TgcD3dDevice::doClear()
 {
-	D3dDevice.Clear(ClearFlags_Target | ClearFlags_ZBuffer, ClearColor, 1.0f, 0);
+	d3dDevice.Clear(ClearFlags_Target | ClearFlags_ZBuffer, ClearColor, 1.0f, 0);
 	HighResolutionTimer::Instance.Set();
 }
 
 void TgcD3dDevice::resetWorldTransofrm()
 {
-	D3dDevice.Transform.World(Matrix::SIdentity());
+	d3dDevice.Transform.World = Matrix::SIdentity();
 }
 
 void TgcD3dDevice::shutDown()
 {
-	D3dDevice.Dispose();
+	d3dDevice.Dispose();
 }

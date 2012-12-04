@@ -66,7 +66,7 @@ VertexFormat Device::GetVertexFormat()
 	return (VertexFormat)format;
 }
 
-void Device::setStreamSource( int streamNumber, LPD3DVERTEXBUFFER vb, int offset, int stride )
+void Device::SetStreamSource( int streamNumber, LPD3DVERTEXBUFFER vb, int offset, int stride )
 {
 	m_device->SetStreamSource(streamNumber, vb, offset,stride);
 }
@@ -86,11 +86,6 @@ void Device::Dispose()
 void Device::Present()
 {
 	m_device->Present(NULL,NULL,NULL,NULL);
-}
-
-void Device::setIndices( LPD3DINDEXBUFFER ib )
-{
-	m_device->SetIndices(ib);
 }
 
 void Device::DrawPrimitives( PrimitiveType pt, int startVertex, int primitiveCount )
@@ -113,7 +108,7 @@ void Device::LightEnable( int index, bool enable )
 	m_device->LightEnable(index,enable);
 }
 
-void Device::SetMaterial( const Material &mat )
+void Device::Setmaterial( const Material &mat )
 {
 	m_device->SetMaterial(mat);
 }
@@ -139,16 +134,34 @@ Device::operator LPD3DDEVICE*( void ) const
 	
 }
 
-Viewport Device::GetViewport()
+Viewport Device::Getviewport()
 {
 	Viewport v;
 	m_device->GetViewport(v);
 	return v;
 }
 
-void Device::SetViewport( Viewport viewport )
+void Device::Setviewport( Viewport viewport )
 {
 	m_device->SetViewport(viewport);
 }
 
+Material Device::Getmaterial()
+{
+	Material mat;
+	m_device->GetMaterial(mat);
+	return mat;
+}
+
+IndexBuffer Device::GetIndices()
+{
+	IndexBuffer ib;
+	m_device->GetIndices(ib);
+	return ib;
+}
+
+void Device::SetIndices( const IndexBuffer &ib )
+{
+	m_device->SetIndices(ib);
+}
 

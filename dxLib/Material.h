@@ -26,6 +26,7 @@ public:
 
 	operator D3DMATERIAL()const;
 	operator const D3DMATERIAL*()const;
+	operator D3DMATERIAL*();
 
 };
 

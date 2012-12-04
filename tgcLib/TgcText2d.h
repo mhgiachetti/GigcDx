@@ -78,7 +78,7 @@ public:
 		changeFont(NULL);
         //color = Color.Black;
 
-        Viewport viewport = GuiController::Instance.D3dDevice().GetViewport();
+        Viewport viewport = GuiController::Instance.D3dDevice.viewport;
         rectangle = WRectangle(0, 0, viewport.Width, viewport.Height);
     }
 
@@ -102,7 +102,7 @@ public:
 		d.SetFaceName("Verdana");
 		d.Height = 10;
 		
-		d3dFont = Font(GuiController::Instance.D3dDevice(), d);
+		d3dFont = Font(GuiController::Instance.D3dDevice, d);
     }
 
     /// <summary>

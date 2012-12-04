@@ -43,8 +43,8 @@ public:
 	virtual void Create(LPD3DDEVICE device, UINT sizeOfBufferInBytes, Usage Usage, Pool Pool, bool sixteenBitIndices);
 	virtual void SetData(void * pData,int dataSize, LockFlags Flags);
 	
-	operator LPD3DINDEXBUFFER(void);
-	operator LPD3DINDEXBUFFER*(void);
+	operator LPD3DINDEXBUFFER(void) const;
+	operator LPD3DINDEXBUFFER*(void) ;
 
 };
 

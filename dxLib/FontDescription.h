@@ -41,6 +41,12 @@ public:
 	CharacterSet GetCharSet();
 	void SetCharSet(CharacterSet charSet);
 
+	PROPERTYGETSET(string,FaceName);
+	PROPERTYGETSET(Precision,OutputPrecision);
+	PROPERTYGETSET(FontQuality,Quality);
+	PROPERTYGETSET(PitchAndFamily,pitchAndFamily);
+	PROPERTYGETSET(CharacterSet,CharSet);
+
 	operator D3DXFONT_DESC()const;
 	operator D3DXFONT_DESC*()const;
 };

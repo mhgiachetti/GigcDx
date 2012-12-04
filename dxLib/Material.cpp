@@ -26,3 +26,8 @@ Material::operator const D3DMATERIAL*() const
 {
 	return (const D3DMATERIAL *)this;
 }
+
+Material::operator D3DMATERIAL*()
+{
+	return (D3DMATERIAL *)this;
+}

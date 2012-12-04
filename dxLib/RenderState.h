@@ -21,6 +21,8 @@ public:
 	RenderState(LPD3DDEVICE device);
 	virtual ~RenderState();
 	virtual void SetDevice(LPD3DDEVICE device);
+
+public:
 	virtual void SetLighting(bool enable);
 	virtual bool GetLighting();
 	virtual void SetCullMode(Cull cullMode);
@@ -29,8 +31,8 @@ public:
 	virtual bool GetZBufferEnable();
 	virtual void SetAlphaBlendEnable(bool enable);
 	virtual bool GetAlphaBlendEnable();
-	virtual void SetBlendOperation(BlendOperation blendOp);
-	virtual BlendOperation GetBlendOperation();
+	virtual void SetblendOperation(BlendOperation blendOp);
+	virtual BlendOperation GetblendOperation();
 	virtual void SetSourceBlend(Blend blend);
 	virtual Blend GetSourceBlend();
 	virtual void SetDestinationBlend(Blend blend);
@@ -41,12 +43,12 @@ public:
 	virtual bool GetNormalizeNormals();
 	virtual void SetPointSize(float size);
 	virtual float GetPointSize();
-	virtual void SetFillMode(FillMode mode);
-	virtual FillMode GetFillMode();
+	virtual void SetfillMode(FillMode mode);
+	virtual FillMode GetfillMode();
 	virtual void SetSpecularEnable(bool enable);
 	virtual bool GetSpecularEnable();
-	virtual void SetShadeMode(ShadeMode mode);
-	virtual ShadeMode GetShadeMode();
+	virtual void SetshadeMode(ShadeMode mode);
+	virtual ShadeMode GetshadeMode();
 	virtual void SetMultiSampleAntiAlias(bool enable);
 	virtual bool GetMultiSampleAntiAlias();
 	virtual void SetSlopeScaleDepthBias(float bias);
@@ -74,8 +76,33 @@ public:
 	virtual void SetPointScaleC(float value);
 	virtual float GetPointScaleC();
 
-
-
+public:
+	PROPERTYGETSET(bool,Lighting);
+	PROPERTYGETSET(Cull,CullMode);
+	PROPERTYGETSET(bool,ZBufferEnable);
+	PROPERTYGETSET(bool,AlphaBlendEnable);
+	PROPERTYGETSET(BlendOperation,blendOperation);
+	PROPERTYGETSET(Blend,SourceBlend);
+	PROPERTYGETSET(Blend,DestinationBlend);
+	PROPERTYGETSET(UINT,Ambient);
+	PROPERTYGETSET(bool,NormalizeNormals);
+	PROPERTYGETSET(float,PointSize);
+	PROPERTYGETSET(FillMode,fillMode);
+	PROPERTYGETSET(bool,SpecularEnable);
+	PROPERTYGETSET(ShadeMode,shadeMode);
+	PROPERTYGETSET(bool,MultiSampleAntiAlias);
+	PROPERTYGETSET(float,SlopeScaleDepthBias);
+	PROPERTYGETSET(float,DepthBias);
+	PROPERTYGETSET(bool,ColorVertex);
+	PROPERTYGETSET(bool,FogEnable);
+	PROPERTYGETSET(bool,AlphaTestEnable);
+	PROPERTYGETSET(int,ReferenceAlpha);
+	PROPERTYGETSET(Compare,AlphaFunction);
+	PROPERTYGETSET(bool,PointSpriteEnable);
+	PROPERTYGETSET(bool,PointScaleEnable);
+	PROPERTYGETSET(float,PointScaleA);
+	PROPERTYGETSET(float,PointScaleB);
+	PROPERTYGETSET(float,PointScaleC);
 };
 
 #endif // !defined(AFX_RENDERSTATE_H__03A47915_11ED_496A_92C4_C2C40DF6916C__INCLUDED_)

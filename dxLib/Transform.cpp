@@ -22,12 +22,12 @@ Transform::~Transform()
 
 }
 
-void Transform::Projection( Matrix &mat )
+void Transform::SetProjection( Matrix &mat )
 {
 	m_device->SetTransform(D3DTS_PROJECTION, mat);
 }
 
-Matrix Transform::Projection()
+Matrix Transform::GetProjection()
 {
 	Matrix mat;
 
@@ -35,12 +35,12 @@ Matrix Transform::Projection()
 	return mat;
 }
 
-void Transform::World( Matrix &mat )
+void Transform::SetWorld( Matrix &mat )
 {
 	m_device->SetTransform(D3DTS_WORLD, mat);
 }
 
-Matrix Transform::World()
+Matrix Transform::GetWorld()
 {
 	Matrix mat;
 	
@@ -48,12 +48,12 @@ Matrix Transform::World()
 	return mat;
 }
 
-void Transform::View( Matrix &mat )
+void Transform::SetView( Matrix &mat )
 {
 	m_device->SetTransform(D3DTS_VIEW, mat);
 }
 
-Matrix Transform::View()
+Matrix Transform::GetView()
 {
 	Matrix mat;
 	

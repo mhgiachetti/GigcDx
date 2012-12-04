@@ -101,12 +101,12 @@ bool RenderState::GetNormalizeNormals()
 	return val > 0;
 }
 
-void RenderState::SetBlendOperation( BlendOperation blendOp )
+void RenderState::SetblendOperation( BlendOperation blendOp )
 {
 	m_device->SetRenderState(D3DRS_BLENDOP, blendOp);
 }
 
-BlendOperation RenderState::GetBlendOperation()
+BlendOperation RenderState::GetblendOperation()
 {
 	DWORD val;
 	m_device->GetRenderState(D3DRS_BLENDOP,&val);
@@ -149,12 +149,12 @@ float RenderState::GetPointSize()
 	return *((float*)&val);
 }
 
-void RenderState::SetFillMode( FillMode mode )
+void RenderState::SetfillMode( FillMode mode )
 {
 	m_device->SetRenderState(D3DRS_FILLMODE,mode);
 }
 
-FillMode RenderState::GetFillMode()
+FillMode RenderState::GetfillMode()
 {
 	DWORD val;
 	m_device->GetRenderState(D3DRS_FILLMODE,&val);
@@ -173,12 +173,12 @@ bool RenderState::GetSpecularEnable()
 	return val > 0;
 }
 
-void RenderState::SetShadeMode( ShadeMode mode )
+void RenderState::SetshadeMode( ShadeMode mode )
 {
 	m_device->SetRenderState(D3DRS_SHADEMODE,mode);
 }
 
-ShadeMode RenderState::GetShadeMode()
+ShadeMode RenderState::GetshadeMode()
 {
 	DWORD val;
 	m_device->GetRenderState(D3DRS_SHADEMODE,&val);
@@ -340,3 +340,4 @@ float RenderState::GetPointScaleC()
 	m_device->GetRenderState(D3DRS_POINTSCALE_C,&val);
 	return *((float*)&val);
 }
+

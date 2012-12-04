@@ -137,12 +137,12 @@ void XMesh::Render()
 	
 	Device device = m_mesh.GetDevice();
 	
-	device.Transform.World(GetTransform());
+	device.Transform.World = GetTransform();
 	
 	
 	for (int i = 0 ; i < m_materials.size(); i++)
 	{
-		device.SetMaterial(m_materials[i]);
+		device.material = m_materials[i];
 		device.SetTexture(0,m_textures[i]);
 		m_mesh.DrawSubset(0);
 	}

@@ -9,6 +9,24 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
+
+//Accesors en c++
+//macros para accesors
+#define PROPERTYGETSETF(t,n,g,s) __declspec( property ( put = s, get = g) ) t n;
+#define PROPERTYGETSET(t,n) PROPERTYGETSETF(t,n,Get##n,Set##n)
+#define PROPERTYGETF(t,n,g) __declspec( property ( get = g) ) t n;
+#define PROPERTYGET(t,n) PROPERTYGETF(t,n,Get##n)
+#define PROPERTYSETF(t,n,s) __declspec( property ( put = s) ) t n;
+#define PROPERTYSET(t,n) PROPERTYSETF(t,n,Set##n)
+#define PROPERTYSIMPLGETSET(t,n,var) PROPERTYGETSET(t,n)\
+	t Get##n(){return var;}\
+	void Set##n(const t &value){var = value;}
+#define PROPERTYSIMPLGET(t,n,var) PROPERTYGET(t,n)\
+	t Get##n(){return var;}
+#define PROPERTYSIMPLSET(t,n,var) PROPERTYSET(t,n)\
+	void Set##n(const t &value){var = value;}
+
+
 #include <d3d9.h>
 #include <d3dx9math.h>
 

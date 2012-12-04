@@ -116,6 +116,145 @@ SOURCE=.\XMesh.cpp
 SOURCE=.\XMesh.h
 # End Source File
 # End Group
+# Begin Group "Windows"
+
+# PROP Default_Filter ""
+# Begin Source File
+
+SOURCE=.\WPoint.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\WPoint.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\WRectangle.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\WRectangle.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\WSize.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\WSize.h
+# End Source File
+# End Group
+# Begin Group "Direct3D"
+
+# PROP Default_Filter ""
+# Begin Group "Source Files"
+
+# PROP Default_Filter ""
+# Begin Source File
+
+SOURCE=.\Caps.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\ColorValue.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Device.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\DeviceCaps.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Effect.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\ExtendedMaterial.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Font.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\FontDescription.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\IndexBuffer.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Light.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Manager.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Material.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Matrix.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Mesh.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Path.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\PresentParameters.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\RenderState.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\SurfaceDescription.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Texture.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\TextureLoader.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Transform.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Vector2.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Vector3.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Vector4.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\VertexBuffer.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\ViewPort.cpp
+# End Source File
+# End Group
 # Begin Group "Header Files"
 
 # PROP Default_Filter ""
@@ -236,140 +375,33 @@ SOURCE=.\VertexBuffer.h
 SOURCE=.\ViewPort.h
 # End Source File
 # End Group
-# Begin Group "Source Files"
-
-# PROP Default_Filter ""
-# Begin Source File
-
-SOURCE=.\Caps.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\ColorValue.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\Device.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\DeviceCaps.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\Effect.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\ExtendedMaterial.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\Font.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\FontDescription.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\IndexBuffer.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\Light.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\Manager.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\Material.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\Matrix.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\Mesh.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\Path.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\PresentParameters.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\RenderState.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\SurfaceDescription.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\Texture.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\TextureLoader.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\Transform.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\Vector2.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\Vector3.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\Vector4.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\VertexBuffer.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\ViewPort.cpp
-# End Source File
 # End Group
-# Begin Group "Windows"
+# Begin Group "DirectInput"
 
 # PROP Default_Filter ""
 # Begin Source File
 
-SOURCE=.\WPoint.cpp
+SOURCE=.\DirectInput\DIDevice.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\WPoint.h
+SOURCE=.\DirectInput\DIDevice.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\WRectangle.cpp
+SOURCE=.\DirectInput\DIGuid.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\WRectangle.h
+SOURCE=.\DirectInput\DIGuid.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\WSize.cpp
+SOURCE=.\DirectInput\DISystemGuid.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\WSize.h
+SOURCE=.\DirectInput\DISystemGuid.h
 # End Source File
 # End Group
 # Begin Source File

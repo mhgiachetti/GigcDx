@@ -28,10 +28,11 @@ public:
 
 public:
 	Device m_device;
+	PROPERTYGETF(Device,D3dDevice,GetD3dDevice);
 	/// <summary>
 	/// Direct3D Device
 	/// </summary>
-	Device D3dDevice();
+	Device GetD3dDevice();
 
 };
 

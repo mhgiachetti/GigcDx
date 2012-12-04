@@ -22,16 +22,20 @@ public:
 	Transform(LPD3DDEVICE device);
 	virtual ~Transform();
 
-	virtual void Projection(Matrix &mat);
-	virtual Matrix Projection();
+	virtual void SetProjection(Matrix &mat);
+	virtual Matrix GetProjection();
 
-	virtual void World(Matrix &mat);
-	virtual Matrix World();
+	virtual void SetWorld(Matrix &mat);
+	virtual Matrix GetWorld();
 
-	virtual void View(Matrix &mat);
-	virtual Matrix View();
+	virtual void SetView(Matrix &mat);
+	virtual Matrix GetView();
 
 	virtual void SetDevice(LPD3DDEVICE device);
+
+	PROPERTYGETSET(Matrix,World);
+	PROPERTYGETSET(Matrix,View);
+	PROPERTYGETSET(Matrix,Projection);
 
 };
 

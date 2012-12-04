@@ -57,22 +57,22 @@ void DeviceTest::Init3D()
 	d.Weight = FontWeight_Normal;
 	d.MipLevels = 1;
 	d.IsItalic = false;
-	d.SetCharSet(CharacterSet_Default);
-	d.SetFaceName("Times New Roman");
+	d.CharSet = CharacterSet_Default;
+	d.FaceName = "Times New Roman";
 	font = Font(m_d3ddevice,d);
 
 	init_light();
 
-	m_d3ddevice.RenderState.SetLighting(false);
-	m_d3ddevice.RenderState.SetCullMode(Cull_None);
-	m_d3ddevice.RenderState.SetZBufferEnable(true);
-	m_d3ddevice.RenderState.SetAmbient(D3DCOLOR_XRGB(50,50,50));
-	m_d3ddevice.RenderState.SetNormalizeNormals(true);
-	m_d3ddevice.RenderState.SetAlphaBlendEnable(true);
-	m_d3ddevice.RenderState.SetBlendOperation(BlendOperation_Add);
-	m_d3ddevice.RenderState.SetSourceBlend(Blend_SourceAlpha);
-	m_d3ddevice.RenderState.SetDestinationBlend(Blend_InvSourceAlpha);
-	m_d3ddevice.RenderState.SetFillMode(FillMode_Solid);
+	m_d3ddevice.RenderState.Lighting = false;
+	m_d3ddevice.RenderState.CullMode = Cull_None;
+	m_d3ddevice.RenderState.ZBufferEnable = true;
+	m_d3ddevice.RenderState.Ambient = D3DCOLOR_XRGB(50,50,50);
+	m_d3ddevice.RenderState.NormalizeNormals = true;
+	m_d3ddevice.RenderState.AlphaBlendEnable = true;
+	m_d3ddevice.RenderState.blendOperation = BlendOperation_Add;
+	m_d3ddevice.RenderState.SourceBlend = Blend_SourceAlpha;
+	m_d3ddevice.RenderState.DestinationBlend = Blend_InvSourceAlpha;
+	m_d3ddevice.RenderState.fillMode = FillMode_Solid;
 
 }
 
@@ -88,17 +88,17 @@ void DeviceTest::Render( double elapsed )
 	Vector3 cameraPos = Vector3::TransformCoordinate(Vector3(12.0f, 7.0f, 12.0f), Matrix::SRotationYawPitchRoll(0,0,index));
 	matView.LookAtLH(cameraPos,Vector3(0.0f,0.0f,0.0f),	Vector3(0.0f,1.0f,0.0f));
 
-	m_d3ddevice.Transform.View(matView);
+	m_d3ddevice.Transform.View = matView;
 
 	Matrix matProjection;
 	matProjection.PerspectiveFovLH(	D3DXToRadian(45),m_aspect_ratio,1.0f,10000.0f);
-	m_d3ddevice.Transform.Projection(matProjection);
+	m_d3ddevice.Transform.Projection = matProjection;
 
 	Matrix matTranslate; 
     matTranslate.RotationY(index);
 	matTranslate.Identity();
 	mesh.SetTransform(matTranslate);
-	m_d3ddevice.Transform.World(matTranslate);
+	m_d3ddevice.Transform.World = matTranslate;
 
 	effect.SetTechnique("Default");
 	//effect.SetValue("matWorldViewProj",matTranslate*matView*matProjection);
@@ -116,7 +116,7 @@ void DeviceTest::Render( double elapsed )
 
 	sprintf(fpsText,"FPS:%d",m_timer.m_fps);
 
-	font.DrawText(NULL,fpsText,WRectangle(0,00,100,100),DrawTextFormat_NoClip,0xff000000);
+	font.DrawText(NULL,fpsText,WRectangle(0,00,100,100),DrawTextFormat_NoClip,0xFFFFFF00);
 	
 
 	//effect.EndPass();
@@ -156,7 +156,7 @@ void DeviceTest::init_light()
 	material.Diffuse = ColorValue(1.0f,1.0f,1.0f,1.0f);
 	material.Ambient = ColorValue(1.0f,1.0f,1.0f,1.0f);
 
-	m_d3ddevice.SetMaterial(material);
+	m_d3ddevice.material = material;
 
 }
 

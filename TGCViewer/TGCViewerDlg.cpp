@@ -212,10 +212,10 @@ void CTGCViewerDlg::OnSize(UINT nType, int cx, int cy)
 
 void CTGCViewerDlg::OnVerWireframe() 
 {
-	if(device.m_d3ddevice.RenderState.GetFillMode() == FillMode_Solid)
-		device.m_d3ddevice.RenderState.SetFillMode(FillMode_WireFrame);
+	if(device.m_d3ddevice.RenderState.fillMode == FillMode_Solid)
+		device.m_d3ddevice.RenderState.fillMode = FillMode_WireFrame;
 	else
-		device.m_d3ddevice.RenderState.SetFillMode(FillMode_Solid);
+		device.m_d3ddevice.RenderState.fillMode = FillMode_Solid;
 }
 
 BOOL CTGCViewerDlg::PreTranslateMessage(MSG* pMsg) 

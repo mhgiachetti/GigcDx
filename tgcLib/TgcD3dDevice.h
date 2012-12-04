@@ -13,7 +13,8 @@
 class TgcD3dDevice  
 {
 public:
-	Device D3dDevice;
+	Device d3dDevice;
+	PROPERTYSIMPLGET(Device,D3dDevice,d3dDevice);
 	HWND panel3d;
 	static const int DEFAULT_CLEAR_COLOR;
 	static const Material DEFAULT_MATERIAL;

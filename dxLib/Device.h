@@ -16,6 +16,7 @@
 #include "Texture.h"
 #include "PresentParameters.h"
 #include "ViewPort.h"
+#include "IndexBuffer.h"
 
 class Device  
 {
@@ -41,14 +42,16 @@ public:
 	void Clear(ClearFlags flags, int color, float zdepth, DWORD stencil);
 	void SetVertexFormat(VertexFormat format);
 	VertexFormat GetVertexFormat();
-	void setStreamSource(int streamNumber, LPD3DVERTEXBUFFER vb, int offset, int stride);
-	void setIndices(LPD3DINDEXBUFFER ib);
+	void SetStreamSource(int streamNumber, LPD3DVERTEXBUFFER vb, int offset, int stride);
+	void SetIndices(const IndexBuffer &ib);
+	IndexBuffer GetIndices();
 	void SetTexture(int stage, const Texture &texture);
 	virtual void Dispose();
 
 	virtual void SetLight(int index, const Light &light);
 	virtual void LightEnable(int index, bool enable);
-	virtual void SetMaterial(const Material &mat);
+	virtual void Setmaterial(const Material &mat);
+	virtual Material Getmaterial();
 	void SetSamplerState(int stage, SamplerStageStates state, int value);
 
 	virtual void DrawPrimitives(PrimitiveType pt, int startVertex, int primitiveCount);
@@ -58,8 +61,12 @@ public:
 
 	void SetDevice(LPD3DDEVICE device);
 
-	virtual Viewport GetViewport();
-	virtual void SetViewport(Viewport viewport);
+	virtual Viewport Getviewport();
+	virtual void Setviewport(Viewport viewport);
+
+	PROPERTYGETSET(Viewport,viewport);
+	PROPERTYGETSET(Material,material);
+	PROPERTYGETSET(IndexBuffer,Indices);
 	
 	//operadores
 	operator LPD3DDEVICE( void );

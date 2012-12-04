@@ -72,7 +72,7 @@ void TgcSimpleTerrain::SetAlphaBlendEnable(bool value)
 /// <param name="center">Centro de la malla del terreno</param>
 void TgcSimpleTerrain::loadHeightmap(string heightmapPath, float scaleXZ, float scaleY, Vector3 center)
 {
-	Device d3dDevice = GuiController.Instance.D3dDevice();
+	Device d3dDevice = GuiController.Instance.D3dDevice;
 	this->center = center;
 
 	//Dispose de VertexBuffer anterior, si habia
@@ -145,7 +145,7 @@ void TgcSimpleTerrain::loadTexture(string path)
 		terrainTexture.Dispose();
 	}
 
-	Device d3dDevice = GuiController.Instance.D3dDevice();
+	Device d3dDevice = GuiController::Instance.D3dDevice;
 
 	terrainTexture = TextureLoader::FromFile(d3dDevice,path.c_str());
 }
@@ -195,16 +195,16 @@ void TgcSimpleTerrain::render()
 	if (!enabled)
 		return;
 
-	Device d3dDevice = GuiController.Instance.D3dDevice();
-	d3dDevice.Transform.World(Matrix::SIdentity());
+	Device d3dDevice = GuiController.Instance.D3dDevice;
+	d3dDevice.Transform.World = Matrix::SIdentity();
 
 	//Render terrain 
 	d3dDevice.SetTexture(0, terrainTexture);
 	d3dDevice.SetTexture(1, NULL);
-	d3dDevice.SetMaterial(TgcD3dDevice::DEFAULT_MATERIAL);
+	d3dDevice.material = TgcD3dDevice::DEFAULT_MATERIAL;
 
 	d3dDevice.SetVertexFormat(CustomVertex::PositionTextured::Format());
-	d3dDevice.setStreamSource(0, vbTerrain, 0,CustomVertex::PositionTextured::Size());
+	d3dDevice.SetStreamSource(0, vbTerrain, 0,CustomVertex::PositionTextured::Size());
 	d3dDevice.DrawPrimitives(PrimitiveType_TriangleList, 0, totalVertices / 3);
 }
 
