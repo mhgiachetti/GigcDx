@@ -10,7 +10,7 @@
 
 HighTimer::HighTimer()
 {
-
+	
 }
 
 HighTimer::~HighTimer()
@@ -22,6 +22,10 @@ void HighTimer::Reset()
 {
 	QueryPerformanceFrequency( &m_frequency );
     QueryPerformanceCounter( &m_start);
+	m_frameCount = 0;
+	m_frame_time_acum = 0;
+	m_elapsed = 0;
+	m_fps = 0;
 }
 
 void HighTimer::Set()

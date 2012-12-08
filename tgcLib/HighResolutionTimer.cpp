@@ -40,6 +40,8 @@ void HighResolutionTimer::Reset()
 {
 	// Time needs to be initialized to current system count.
 	_startTime = GetTicks();
+	_frameCount = 0;
+	_frameSecond = 0;
 }
 
 void HighResolutionTimer::Set()

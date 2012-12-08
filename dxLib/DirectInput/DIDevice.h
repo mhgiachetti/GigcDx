@@ -14,6 +14,7 @@ namespace DirectInput
 {
 	class Device  
 	{
+		LPDIRECTINPUT8 aa;
 	public:
 		Device();
 		virtual ~Device();

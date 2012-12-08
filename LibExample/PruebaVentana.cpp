@@ -12,6 +12,7 @@
 
 XMesh mesh;
 Effect effect;
+Font font;
 
 PruebaVentana::PruebaVentana( HINSTANCE hInstance ):SimpleDeviceWindow(hInstance)
 {
@@ -46,7 +47,14 @@ void PruebaVentana::Init3D()
 	m_d3ddevice.RenderState.blendOperation = BlendOperation_Add;
 	m_d3ddevice.RenderState.SourceBlend = Blend_SourceAlpha; 
 	m_d3ddevice.RenderState.AlphaBlendEnable = true;
-	m_d3ddevice.RenderState.fillMode = FillMode_WireFrame;
+	m_d3ddevice.RenderState.fillMode = FillMode_Solid;
+	
+	FontDescription fd;
+	fd.Height = 20;
+	fd.FaceName = "Arial";
+	fd.Weight = FontWeight_Normal;
+	font = Font(m_d3ddevice, fd);
+	
 
 }
 
@@ -77,14 +85,18 @@ void PruebaVentana::Render( double elapsed )
 
 	effect.SetValue("base_Tex",mesh.m_textures[0]);
 
-	effect.Begin(FX_None);
-	effect.BeginPass(0);
+	//effect.Begin(FX_None);
+	//effect.BeginPass(0);
 
 	mesh.Render();
 
+	char fps[100];
+	sprintf(fps,"FPS:%d",m_timer.m_fps);
+	font.DrawText(NULL,fps,WRectangle(0,00,100,100),DrawTextFormat_NoClip,0xFFFFFF00);
 
-	effect.EndPass();
-	effect.End();
+
+	//effect.EndPass();
+	//effect.End();
 
 
 	m_d3ddevice.EndScene();
