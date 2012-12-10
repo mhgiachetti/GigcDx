@@ -42,3 +42,4 @@ ipch
 *.plg
 *.suo
 *.vcproj
+Debug
