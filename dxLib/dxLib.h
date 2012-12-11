@@ -36,6 +36,13 @@
 #include "VertexBuffer.h"
 #include "Viewport.h"
 
+//Direct Input
+#include "DirectInput/DIDevice.h"
+#include "DirectInput/DIGuid.h"
+#include "DirectInput/DIKeyBoardState.h"
+#include "DirectInput/DIMouseState.h"
+#include "DirectInput/DISystemGuid.h"
+
 
 //utils
 #include "HighTimer.h"

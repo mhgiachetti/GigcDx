@@ -72,7 +72,7 @@ void TgcSimpleTerrain::SetAlphaBlendEnable(bool value)
 /// <param name="center">Centro de la malla del terreno</param>
 void TgcSimpleTerrain::loadHeightmap(string heightmapPath, float scaleXZ, float scaleY, Vector3 center)
 {
-	Device d3dDevice = GuiController.Instance.D3dDevice;
+	Device d3dDevice = GuiController::Instance.D3dDevice;
 	this->center = center;
 
 	//Dispose de VertexBuffer anterior, si habia
@@ -195,7 +195,7 @@ void TgcSimpleTerrain::render()
 	if (!enabled)
 		return;
 
-	Device d3dDevice = GuiController.Instance.D3dDevice;
+	Device d3dDevice = GuiController::Instance.D3dDevice;
 	d3dDevice.Transform.World = Matrix::SIdentity();
 
 	//Render terrain 

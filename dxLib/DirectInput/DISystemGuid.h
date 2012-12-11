@@ -10,11 +10,15 @@
 #endif // _MSC_VER > 1000
 
 #include "../globalDefines.h"
+#include "DIGuid.h"
 
 namespace DirectInput
 {
 	class SystemGuid  
 	{
+	public:
+		static const Guid Mouse;
+        static const Guid Keyboard;
 	public:
 		SystemGuid();
 		~SystemGuid();

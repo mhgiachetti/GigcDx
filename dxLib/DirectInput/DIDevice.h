@@ -8,16 +8,37 @@
 #if _MSC_VER > 1000
 #pragma once
 #endif // _MSC_VER > 1000
+
 #include "../globalDefines.h"
+#include "DIGuid.h"
+#include "DIKeyBoardState.h"
+#include "DIMouseState.h"
+
 
 namespace DirectInput
 {
 	class Device  
 	{
-		LPDIRECTINPUT8 aa;
+		LPDINPUT m_dinput;
+		LPDINPUTDEVICE m_device;
 	public:
+		union{
+			KeyboardState m_keyboardstate;
+			MouseState m_mousestate;
+		};
 		Device();
+		Device(LPDINPUTDEVICE device);
+		Device(Guid deviceGuid);
 		virtual ~Device();
+
+		void SetCooperativeLevel(HWND hwnd, CooperativeLevelFlags flags);
+		void Acquire();
+        void Unacquire();
+		void Dispose();
+		KeyboardState &GetCurrentKeyboardState();
+		MouseState &GetCurrentMouseState();
+
+		PROPERTYGETF(MouseState&,CurrentMouseState,GetCurrentMouseState);
 		
 	};
 }

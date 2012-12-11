@@ -16,8 +16,27 @@ namespace DirectInput
 	class Guid  
 	{
 	public:
+		unsigned int        _a;
+        unsigned short      _b; 
+        unsigned short      _c;
+        unsigned char       _d;
+        unsigned char       _e;
+        unsigned char       _f; 
+        unsigned char       _g;
+        unsigned char       _h; 
+        unsigned char       _i; 
+        unsigned char       _j;
+        unsigned char       _k; 
+
+
+	public:
 		Guid();
-		virtual ~Guid();
+		Guid(const GUID &val);
+		~Guid();
+
+		operator GUID() const;
+		operator GUID*() const;
+		operator =(const GUID &val);
 
 	};
 }

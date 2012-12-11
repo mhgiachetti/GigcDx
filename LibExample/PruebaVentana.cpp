@@ -37,7 +37,7 @@ void PruebaVentana::Init3D()
 	}
 
 	init_light();
-
+	
 	m_d3ddevice.RenderState.Lighting = false;
 	m_d3ddevice.RenderState.CullMode = Cull_None;
 	m_d3ddevice.RenderState.ZBufferEnable = true;

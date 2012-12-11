@@ -1,23 +1,15 @@
-// DISystemGuid.cpp: implementation of the SystemGuid class.
+// DIMouseState.cpp: implementation of the MouseState class.
 //
 //////////////////////////////////////////////////////////////////////
 
-#include "DISystemGuid.h"
+#include "DIMouseState.h"
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 using namespace DirectInput;
 
-SystemGuid::SystemGuid()
+DirectInput::MouseState::operator void *() const
 {
-
+	return (void*)this;
 }
-
-SystemGuid::~SystemGuid()
-{
-
-}
-
-const Guid SystemGuid::Mouse = GUID_SysMouse;
-const Guid SystemGuid::Keyboard = GUID_SysKeyboard;

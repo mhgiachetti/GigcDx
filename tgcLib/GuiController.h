@@ -33,6 +33,7 @@ public:
 	/// Direct3D Device
 	/// </summary>
 	Device GetD3dDevice();
+	void stopCurrentExample();
 
 };
 

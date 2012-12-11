@@ -32,3 +32,8 @@ Device GuiController::GetD3dDevice()
 {
 	return m_device;
 }
+
+void GuiController::stopCurrentExample()
+{
+	
+}
