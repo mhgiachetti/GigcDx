@@ -397,6 +397,22 @@ SOURCE=.\DirectInput\DIGuid.h
 # End Source File
 # Begin Source File
 
+SOURCE=.\DirectInput\DIKeyBoardState.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\DirectInput\DIKeyBoardState.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\DirectInput\DIMouseState.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\DirectInput\DIMouseState.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\DirectInput\DISystemGuid.cpp
 # End Source File
 # Begin Source File

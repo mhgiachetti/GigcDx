@@ -21,6 +21,7 @@ namespace DirectInput
 	{
 		LPDINPUT m_dinput;
 		LPDINPUTDEVICE m_device;
+		bool m_formatSeted;
 	public:
 		union{
 			KeyboardState m_keyboardstate;

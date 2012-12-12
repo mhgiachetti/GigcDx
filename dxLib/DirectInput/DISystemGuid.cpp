@@ -9,6 +9,9 @@
 //////////////////////////////////////////////////////////////////////
 using namespace DirectInput;
 
+Guid SystemGuid::Mouse(GUID_SysMouse);
+Guid SystemGuid::Keyboard(GUID_SysKeyboard);
+
 SystemGuid::SystemGuid()
 {
 
@@ -19,5 +22,4 @@ SystemGuid::~SystemGuid()
 
 }
 
-const Guid SystemGuid::Mouse = GUID_SysMouse;
-const Guid SystemGuid::Keyboard = GUID_SysKeyboard;
+

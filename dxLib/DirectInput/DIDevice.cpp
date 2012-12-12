@@ -14,6 +14,7 @@ Device::Device()
 {
 	m_device = NULL;
 	m_dinput = NULL;
+	m_formatSeted=false;
 
 }
 
@@ -28,10 +29,11 @@ Device::Device( LPDINPUTDEVICE device )
 	m_device = device;
 }
 
-Device::Device( Guid deviceGuid )
+DirectInput::Device::Device( Guid deviceGuid )
 {
-	DirectInputCreate(NULL,DIRECTINPUT_VERSION,IID_IDirectInput8, (void**)&m_dinput,NULL);
+	DirectInputCreate(GetModuleHandle(NULL),DIRECTINPUT_VERSION,IID_IDirectInput8, (void**)&m_dinput,NULL);
 	m_dinput->CreateDevice(deviceGuid,&m_device,NULL);
+	m_formatSeted = false;
 }
 
 void Device::SetCooperativeLevel( HWND hwnd, CooperativeLevelFlags flags )
@@ -57,12 +59,25 @@ void DirectInput::Device::Dispose()
 
 DirectInput::KeyboardState& DirectInput::Device::GetCurrentKeyboardState()
 {
-	m_device->GetDeviceState(sizeof(KeyboardState),m_keyboardstate);
+	if(!m_formatSeted)
+	{
+		m_device->SetDataFormat(&c_dfDIKeyboard);
+		Acquire();
+		m_formatSeted = true;
+	}
+	
+	m_device->GetDeviceState(256,m_keyboardstate);
 	return m_keyboardstate;
 }
 
 MouseState & DirectInput::Device::GetCurrentMouseState()
 {
-	m_device->GetDeviceState(sizeof(MouseState),m_mousestate);
+	if(!m_formatSeted)
+	{
+		m_device->SetDataFormat(&c_dfDIMouse);
+		Acquire();
+		m_formatSeted = true;
+	}
+	m_device->GetDeviceState(sizeof(DirectInput::MouseState),m_mousestate);
 	return m_mousestate;
 }

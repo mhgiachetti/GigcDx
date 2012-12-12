@@ -17,8 +17,8 @@ namespace DirectInput
 	class SystemGuid  
 	{
 	public:
-		static const Guid Mouse;
-        static const Guid Keyboard;
+		static Guid Mouse;
+        static Guid Keyboard;
 	public:
 		SystemGuid();
 		~SystemGuid();

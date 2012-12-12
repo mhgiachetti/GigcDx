@@ -22,5 +22,5 @@ bool DirectInput::KeyboardState::operator[]( Key key ) const
 
 bool DirectInput::KeyboardState::operator[]( int key ) const
 {
-	return keys[key];
+	return keys[key+1];
 }

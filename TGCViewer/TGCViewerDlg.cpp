@@ -6,9 +6,12 @@
 #include "TGCViewerDlg.h"
 #include "DeviceTest.h"
 
+#define DIRECTINPUT_VERSION 0x0800
 //agrego la libreria de directx
 #pragma comment (lib, "d3d9.lib")
 #pragma comment (lib, "d3dx9.lib")
+#pragma comment (lib, "dinput8.lib")
+#pragma comment (lib, "dxguid.lib")
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -91,6 +94,7 @@ BEGIN_MESSAGE_MAP(CTGCViewerDlg, CDialog)
 	ON_WM_SIZE()
 	ON_COMMAND(ID_VER_WIREFRAME, OnVerWireframe)
 	ON_WM_KEYDOWN()
+	ON_WM_TIMER()
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -124,6 +128,7 @@ BOOL CTGCViewerDlg::OnInitDialog()
 	SetIcon(m_hIcon, TRUE);			// Set big icon
 	SetIcon(m_hIcon, FALSE);		// Set small icon
 
+	//this->SetTimer(0,5000,NULL);
 	m_hAccelTable = LoadAccelerators(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDR_ACCELERATOR1));
 	
 	device.m_accel = m_hAccelTable;
@@ -232,4 +237,13 @@ BOOL CTGCViewerDlg::PreTranslateMessage(MSG* pMsg)
 void CTGCViewerDlg::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags) 
 {
 	CDialog::OnKeyDown(nChar, nRepCnt, nFlags);
+}
+
+void CTGCViewerDlg::OnTimer(UINT nIDEvent) 
+{
+	KillTimer(0);
+
+	//device.Play();
+
+	CDialog::OnTimer(nIDEvent);
 }

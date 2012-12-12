@@ -19,12 +19,12 @@ TgcD3dInput::TgcD3dInput( HWND guiControl, HWND panel3d )
 	this->panel3d = panel3d;
 	
 	//keyboard
-	keyboardDevice = DirectInput::Device(SystemGuid.Keyboard);
+	keyboardDevice = DirectInput::Device(/*SystemGuid::Keyboard*/ GUID_SysKeyboard);
 	keyboardDevice.SetCooperativeLevel(guiControl, CooperativeLevelFlags_Background | CooperativeLevelFlags_NonExclusive);
 	keyboardDevice.Acquire();
 	
 	//mouse
-	mouseDevice = DirectInput::Device(SystemGuid::Mouse);
+	mouseDevice = DirectInput::Device(/*SystemGuid::Mouse*/ GUID_SysMouse);
 	mouseDevice.SetCooperativeLevel(guiControl, CooperativeLevelFlags_Background | CooperativeLevelFlags_NonExclusive);
 	mouseDevice.Acquire();
 	mouseIndex = 0;

@@ -28,6 +28,7 @@ enum MouseButtons
 class TgcD3dInput  
 {
 public:
+	TgcD3dInput();
 	virtual ~TgcD3dInput();
 
     HWND guiControl;

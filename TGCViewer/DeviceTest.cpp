@@ -7,6 +7,7 @@
 #include "DeviceTest.h"
 #include "..\tgcLib\TGCSimpleTerrain.h"
 #include "..\tgcLib\GuiController.h"
+#include "..\tgcLib\TgcD3dInput.h"
 
 #ifdef _DEBUG
 #undef THIS_FILE
@@ -20,6 +21,7 @@ static char THIS_FILE[]=__FILE__;
 XMesh mesh;
 Effect effect;
 TgcSimpleTerrain terrain;
+TgcD3dInput *input;
 Font font;
 
 DeviceTest::DeviceTest():SimpleDeviceWindow(NULL)
@@ -36,6 +38,7 @@ void DeviceTest::Init3D()
 {
 	GuiController::newInstance();
 	GuiController::Instance.m_device = m_d3ddevice;
+	input = new TgcD3dInput(m_hWnd,m_hWnd);
 
 	mesh = MeshLoader::LoadFromX(m_d3ddevice, "media\\x\\tiger.x");
 
@@ -78,14 +81,23 @@ void DeviceTest::Init3D()
 
 void DeviceTest::Render( double elapsed )
 {
+	input->update();
 	m_d3ddevice.Clear(ClearFlags_Target |ClearFlags_ZBuffer, D3DCOLOR_XRGB(0,40,100),1.0f,0);
 	m_d3ddevice.BeginScene();
 
 	static float index = 0;
 	index += 0.50f*elapsed;
 
+	static float offsetCam = 0;
+
+	if(input->keyDown(Key_W))
+		offsetCam += 0.1f;
+	if(input->keyDown(Key_S))
+		offsetCam -= 0.1f;
+
+
 	Matrix matView;
-	Vector3 cameraPos = Vector3::TransformCoordinate(Vector3(12.0f, 7.0f, 12.0f), Matrix::SRotationYawPitchRoll(0,0,index));
+	Vector3 cameraPos = Vector3::TransformCoordinate(Vector3(12.0f, 7.0f, 12.0f + offsetCam), Matrix::SRotationYawPitchRoll(0,0,index));
 	matView.LookAtLH(cameraPos,Vector3(0.0f,0.0f,0.0f),	Vector3(0.0f,1.0f,0.0f));
 
 	m_d3ddevice.Transform.View = matView;
@@ -129,6 +141,7 @@ void DeviceTest::Render( double elapsed )
 
 void DeviceTest::Dispose()
 {
+	input->destroy();
 	mesh.Dispose();
 	SimpleDeviceWindow::Dispose();
 }
