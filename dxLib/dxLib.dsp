@@ -422,6 +422,14 @@ SOURCE=.\DirectInput\DISystemGuid.h
 # End Group
 # Begin Source File
 
+SOURCE=.\Geometry.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Geometry.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\Sprite.cpp
 # End Source File
 # Begin Source File

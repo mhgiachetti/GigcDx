@@ -25,10 +25,10 @@ GuiController::~GuiController()
 /// </summary>
 void GuiController::newInstance()
 {
-	Instance = GuiController();
+	//Instance = GuiController();
 }
 
-Device GuiController::GetD3dDevice()
+::Device GuiController::GetD3dDevice()
 {
 	return m_device;
 }

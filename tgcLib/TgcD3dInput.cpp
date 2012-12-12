@@ -3,6 +3,7 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "TgcD3dInput.h"
+#include "GuiController.h"
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
@@ -11,6 +12,11 @@
 TgcD3dInput::~TgcD3dInput()
 {
 
+}
+
+TgcD3dInput::TgcD3dInput()
+{
+	
 }
 
 TgcD3dInput::TgcD3dInput( HWND guiControl, HWND panel3d )
@@ -56,8 +62,8 @@ TgcD3dInput::TgcD3dInput( HWND guiControl, HWND panel3d )
 	//Inicializar estados de teclas
 	//int[] keysArray = (int[])Enum.GetValues(typeof(Key));
 	//int maxKeyValue = keysArray[keysArray.Length - 1];
-	ZeroMemory(&previouskeyboardState,sizeof(KeyboardState));
-	ZeroMemory(&currentkeyboardState,sizeof(KeyboardState));
+	ZeroMemory(&previouskeyboardState,sizeof(previouskeyboardState));
+	ZeroMemory(&currentkeyboardState,sizeof(currentkeyboardState));
 	//for (int i = 0; i < maxKeyValue; i++)
 	//{
 	//    previouskeyboardState[i] = false;
@@ -73,6 +79,8 @@ TgcD3dInput::TgcD3dInput( HWND guiControl, HWND panel3d )
 	//    currentMouseButtonsState[i] = false;
 	//}
 }
+
+
 
 void TgcD3dInput::destroy()
 {
@@ -148,7 +156,7 @@ void TgcD3dInput::updateKeyboard()
 
 void TgcD3dInput::updateMouse()
 {
-	MouseState &mouseState = mouseDevice.CurrentMouseState;
+	DirectInput::MouseState &mouseState = mouseDevice.CurrentMouseState;
 	memcpy(previousMouseButtonsState,currentMouseButtonsState,sizeof(currentMouseButtonsState));
 	memcpy(currentMouseButtonsState,mouseState.GetMouseButtons(),sizeof(currentMouseButtonsState));
 	

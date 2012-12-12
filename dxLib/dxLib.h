@@ -16,6 +16,7 @@
 #include "ExtendedMaterial.h"
 #include "Font.h"
 #include "FontDescription.h"
+#include "Geometry.h"
 #include "IndexBuffer.h"
 #include "Light.h"
 #include "Manager.h"

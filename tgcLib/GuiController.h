@@ -9,7 +9,9 @@
 #pragma once
 #endif // _MSC_VER > 1000
 #include "..\dxLib\dxLib.h"
+#include "TgcD3dInput.h"
 #include "TgcD3dDevice.h"
+
 
 class GuiController  
 {
@@ -27,6 +29,7 @@ public:
 	static void newInstance();
 
 public:
+	TgcD3dInput D3dInput;
 	Device m_device;
 	PROPERTYGETF(Device,D3dDevice,GetD3dDevice);
 	/// <summary>
@@ -34,6 +37,9 @@ public:
 	/// </summary>
 	Device GetD3dDevice();
 	void stopCurrentExample();
+	float ElapsedTime;
+	void printCurrentPosition(){};
+	
 
 };
 

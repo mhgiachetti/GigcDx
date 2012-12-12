@@ -9,8 +9,6 @@
 #pragma once
 #endif // _MSC_VER > 1000
 #include "../dxLib/dxLib.h"
-#include "GuiController.h"
-using namespace DirectInput;
 
 /// <summary>
 /// Botones del mouse para DirectInput
@@ -36,8 +34,8 @@ public:
     
     //Keyboard
 	DirectInput::Device keyboardDevice;
-    KeyboardState previouskeyboardState;
-    KeyboardState currentkeyboardState;
+    DirectInput::KeyboardState previouskeyboardState;
+    DirectInput::KeyboardState currentkeyboardState;
 
     //Mouse
     DirectInput::Device mouseDevice;

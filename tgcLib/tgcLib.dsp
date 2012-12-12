@@ -105,6 +105,10 @@ SOURCE=.\TgcD3dInput.cpp
 # End Source File
 # Begin Source File
 
+SOURCE=.\TgcFpsCamera.cpp
+# End Source File
+# Begin Source File
+
 SOURCE=.\TGCSimpleTerrain.cpp
 # End Source File
 # Begin Source File
@@ -133,11 +137,19 @@ SOURCE=.\IRenderObject.h
 # End Source File
 # Begin Source File
 
+SOURCE=.\TgcCamera.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\TgcD3dDevice.h
 # End Source File
 # Begin Source File
 
 SOURCE=.\TgcD3dInput.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\TgcFpsCamera.h
 # End Source File
 # Begin Source File
 
